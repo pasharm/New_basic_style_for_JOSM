@@ -267,7 +267,7 @@ way|z10-16[highway=pedestrian] { z-index: 6; color: #8cd05f;  width: 2;  dashes:
 way|z17-21[highway=pedestrian]::dashes { z-index: 7;  color: #ffffff;  width: 3;  dashes: 4,6;  }
 way|z10-16[highway=pedestrian]::dashes { z-index: 7;  color: #ffffff;  width: 2;  dashes: 4,6;  }
 
-
+/*** TODO: добавить highway=construction ***/
 
 /*** Водные объекты  ***/
 
@@ -560,6 +560,11 @@ area[craft=tiler] { fill-color: craft#999900; }
 
 way[landuse=construction] { width: 2; color: #ffff00; dashes: 9,9; }
 
+/*** Иконка внутри области ***/
+
+area[amenity=parking] {
+    icon-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/parking.png";
+}
 
 /*** Типы лисьтев ***/
 
@@ -776,4 +781,3 @@ way[boundary=national_park]::dashes {
     color: #eeeeee;
     dashes: 6,6,20,6;
 }
-
