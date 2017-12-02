@@ -566,6 +566,8 @@ area[amenity=parking] {
     icon-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/parking.png";
 }
 
+/* todo: добавить все иконки на области, которые есть в ID редакторе */
+
 /*** Типы лисьтев ***/
 
 
