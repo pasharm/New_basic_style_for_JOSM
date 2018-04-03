@@ -23,7 +23,7 @@ meta[lang=uk]
     author: "Мокринський Павло";
 }
 
-node, area { text-color: black; font-size: 12; text-halo-color: white;  text-halo-radius: 2; }
+node, area { text-color: black; font-size: 12; text-halo-color: white;  text-halo-radius: 2; font-weight: bold; }
 
 
 /*************************/
