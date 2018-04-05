@@ -367,7 +367,20 @@ area[power=generator] {
     fill-color: power#eeeeee;
 }
 
+relation[type=multipolygon][power=plant] >[role="inner"] way,
+relation[type=multipolygon][power=plant] >[role="outer"] way { color: #eeeeee; width: 1; }
 
+relation[type=multipolygon][power=substation] >[role="inner"] way,
+relation[type=multipolygon][power=substation] >[role="outer"] way { color: #eeeeee; width: 1; }
+
+relation[type=multipolygon][power=compensator] >[role="inner"] way,
+relation[type=multipolygon][power=compensator] >[role="outer"] way { color: #eeeeee; width: 1; }
+
+relation[type=multipolygon][power=converter] >[role="inner"] way,
+relation[type=multipolygon][power=converter] >[role="outer"] way { color: #eeeeee; width: 1; }
+
+relation[type=multipolygon][power=generator] >[role="inner"] way,
+relation[type=multipolygon][power=generator] >[role="outer"] way { color: #eeeeee; width: 1; }
 
 
 /*** Объекты землепользования ***/
@@ -375,19 +388,42 @@ area[power=generator] {
 area[landuse=residential],
 area[landuse=construction] { fill-color: #FFFF00; } 
 
+relation[type=multipolygon][landuse=residential] >[role="inner"] way,
+relation[type=multipolygon][landuse=residential] >[role="outer"] way { color: #FFFF00; width: 1; }
+
+relation[type=multipolygon][landuse=construction] >[role="inner"] way,
+relation[type=multipolygon][landuse=construction] >[role="outer"] way { color: #FFFF00; width: 1; }
+
 /* area[landuse=industrial] { fill-color: #C4BD19; } */
 
 area[landuse=industrial],
 area[power=plant]{ fill-color: #E4A4F5; }
 
+relation[type=multipolygon][landuse=industrial] >[role="inner"] way,
+relation[type=multipolygon][landuse=industrial] >[role="outer"] way { color: #E4A4F5; width: 1; }
+
+relation[type=multipolygon][power=plant] >[role="inner"] way,
+relation[type=multipolygon][power=plant] >[role="outer"] way { color: #E4A4F5; width: 1; }
 
 
 area[landuse=commercial],
 area[landuse=retail],
 area[landuse=landfill] { fill-color: #F1881A; } 
 
+relation[type=multipolygon][landuse=commercial] >[role="inner"] way,
+relation[type=multipolygon][landuse=commercial] >[role="outer"] way { color: #F1881A; width: 1; }
+
+relation[type=multipolygon][landuse=retail] >[role="inner"] way,
+relation[type=multipolygon][landuse=retail] >[role="outer"] way { color: #F1881A; width: 1; }
+
+relation[type=multipolygon][landuse=landfill] >[role="inner"] way,
+relation[type=multipolygon][landuse=landfill] >[role="outer"] way { color: #F1881A; width: 1; }
+
 
 area[landuse=military] { fill-color: #FF4444; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/military1.png"}
+
+relation[type=multipolygon][landuse=military] >[role="inner"] way,
+relation[type=multipolygon][landuse=military] >[role="outer"] way { color: #FF4444; width: 1; }
 
 way|z17-21[landuse=military] { width: 1; color: #FF4444; }
 way|z17-21[landuse=military]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
