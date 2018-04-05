@@ -2,8 +2,8 @@
 meta 
 {
     title: "New basic style";
-    description: "Style is made in the likeness of the id editor from the web version of openstreetmap.org";
-    version: "12_2017-11-20";
+    description: "Style is made in the likeness of the id editor from the web version of openstreetmap.org. Зауваження та побажання пишіть на https://github.com/pasharm/New_basic_style_for_JOSM/issues";
+    version: "13_2018-04-05";
     author: "Mokrynskyi Pavlo";
     link: "https://github.com/pasharm/New_basic_style_for_JOSM";
     watch-modified: true;
@@ -12,15 +12,22 @@ meta
 meta[lang=ru]
 {
     title: "Новый базовый стиль";
-    description: "Cтиль сделан по подобию id рeдактора из веб версии openstreetmap.org";
+    description: "Cтиль сделан по подобию id рeдактора из веб версии openstreetmap.org. Замечания и пожелания пишите на https://github.com/pasharm/New_basic_style_for_JOSM/issues";
     author: "Мокринский Павел";
 }
 
 meta[lang=uk]
 {
     title: "Новий базовий стиль";
-    description: "Cтиль зроблений за зразком id рeдактора з веб версії openstreetmap.org";  
+    description: "Cтиль зроблений за зразком id рeдактора з веб версії openstreetmap.org. Зауваження та побажання пишіть на https://github.com/pasharm/New_basic_style_for_JOSM/issues";
     author: "Мокринський Павло";
+}
+
+meta[lang=de]
+{
+    title: "Neuer Grundstil";
+    description: "Der Stil basiert auf der Beispiel-ID des Entwicklers aus der Web-Version von openstreetmap.org. Kommentare und Wünsche schreiben Sie bitte an https://github.com/pasharm/New_basic_style_for_JOSM/issues";
+    author: "Mokrinski Pavel";
 }
 
 node, area { text-color: black; font-size: 12; text-halo-color: white;  text-halo-radius: 2; font-weight: bold; }
