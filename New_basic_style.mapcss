@@ -93,21 +93,6 @@ way[highway]>node|z10-16:selected { object-z-index: 0; symbol-shape: circle; sym
 
 /*** Заливка ***/
 
-area|z17-21[building],
-area|z17-21[building=roof],
-area|z17-21[building][!building?!][wall?!],
-area|z17-21[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 1; fill-color: #E06E5F; fill-opacity: 0.3; }
-
-area|z16[building],
-area|z16[building=roof],
-area|z16[building][!building?!][wall?!],
-area|z16[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 0.001; fill-color: #E06E5F; fill-opacity: 0.01; }
-
-area|z10-15[building],
-area|z10-15[building=roof],
-area|z10-15[building][!building?!][wall?!],
-area|z10-15[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 0.001; fill-color: #; fill-opacity: 0.01; }
-
 area[amenity], area[landuse], area[leisure], area[natural], area[building] { width: 1; }
 
 area { color: ; fill-opacity: 0.25; }
@@ -833,6 +818,27 @@ relation[type=multipolygon][craft=tiler] >[role="inner"] way,
 relation[type=multipolygon][craft=tiler] >[role="outer"] way { color: #999900; width: 1; }
 
 way[landuse=construction] { width: 2; color: #ffff00; dashes: 9,9; }
+
+
+
+
+area|z17-21[building],
+area|z17-21[building=roof],
+area|z17-21[building][!building?!][wall?!],
+area|z17-21[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 1; fill-color: #E06E5F; fill-opacity: 0.3; }
+
+area|z16[building],
+area|z16[building=roof],
+area|z16[building][!building?!][wall?!],
+area|z16[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 0.001; fill-color: #E06E5F; fill-opacity: 0.01; }
+
+area|z10-15[building],
+area|z10-15[building=roof],
+area|z10-15[building][!building?!][wall?!],
+area|z10-15[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 0.001; fill-color: #; fill-opacity: 0.01; }
+
+
+
 
 /*** Иконка внутри области ***/
 
