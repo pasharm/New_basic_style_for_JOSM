@@ -415,6 +415,18 @@ way|z17-21[landuse=military]::dashes { color: #;  width: ;  dashes: 0; linecap: 
 way|z10-16[landuse=military] { width: 1; color: #FF4444; }
 way|z10-16[landuse=military]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
 
+
+area[military] { fill-color: #FF4444; }
+
+relation[type=multipolygon][military] >[role="inner"] way,
+relation[type=multipolygon][military] >[role="outer"] way { color: #FF4444; width: 1; }
+
+way|z17-21[military] { width: 1; color: #FF4444; }
+way|z17-21[military]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+way|z10-16[military] { width: 1; color: #FF4444; }
+way|z10-16[military]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+
+
 area[landuse=vineyard] { fill-color: #AEDFA3; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/vineyard1.png"}
 
 relation[type=multipolygon][landuse=vineyard] >[role="inner"] way,
