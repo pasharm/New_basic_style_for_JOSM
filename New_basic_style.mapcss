@@ -720,6 +720,46 @@ way|z17-21[amenity=hospital]::dashes { color: #;  width: ;  dashes: 0; linecap: 
 way|z10-16[amenity=hospital] { width: 1; color: #c9dfec; }
 way|z10-16[amenity=hospital]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
 
+
+area[leisure=stadium] { fill-color: #8beba3; }
+
+relation[type=multipolygon][leisure=stadium] >[role="inner"] way,
+relation[type=multipolygon][leisure=stadium] >[role="outer"] way { color: #8beba3; width: 1; }
+
+way|z17-21[leisure=stadium] { width: 1; color: #8beba3; }
+way|z17-21[leisure=stadium]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+way|z10-16[leisure=stadium] { width: 1; color: #8beba3; }
+way|z10-16[leisure=stadium]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+
+
+area[leisure=track] { fill-color: #7ae3ab; }
+
+relation[type=multipolygon][leisure=track] >[role="inner"] way,
+relation[type=multipolygon][leisure=track] >[role="outer"] way { color: #7ae3ab; width: 1; }
+
+way|z17-21[leisure=track] { width: 1; color: #7ae3ab; }
+way|z17-21[leisure=track]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+way|z10-16[leisure=track] { width: 1; color: #7ae3ab; }
+way|z10-16[leisure=track]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+
+
+area[leisure=playground] { fill-color: #b3efcd; }
+
+relation[type=multipolygon][leisure=playground] >[role="inner"] way,
+relation[type=multipolygon][leisure=playground] >[role="outer"] way { color: #b3efcd; width: 1; }
+
+way|z17-21[leisure=playground] { width: 1; color: #b3efcd; }
+way|z17-21[leisure=playground]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+way|z10-16[leisure=playground] { width: 1; color: #b3efcd; }
+way|z10-16[leisure=playground]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+
+
+area[highway=pedestrian][area=yes] { fill-color: #ededed; }
+
+relation[type=multipolygon][highway=pedestrian][area=yes] >[role="inner"] way,
+relation[type=multipolygon][highway=pedestrian][area=yes] >[role="outer"] way { color: #ededed; width: 1; }
+
+
 area[craft=carpenter],
 area[craft=shoemaker],
 area[craft=photographer],
