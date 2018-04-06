@@ -725,6 +725,16 @@ relation[type=multipolygon][amenity=university] >[role="inner"] way,
 relation[type=multipolygon][amenity=university] >[role="outer"] way { color: #FFFF94; width: 1; }
 
 
+area[amenity=hospital] { fill-color: #c9dfec; }
+
+relation[type=multipolygon][amenity=hospital] >[role="inner"] way,
+relation[type=multipolygon][amenity=hospital] >[role="outer"] way { color: #c9dfec; width: 1; }
+
+way|z17-21[amenity=hospital] { width: 1; color: #c9dfec; }
+way|z17-21[amenity=hospital]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+way|z10-16[amenity=hospital] { width: 1; color: #c9dfec; }
+way|z10-16[amenity=hospital]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+
 area[craft=carpenter],
 area[craft=shoemaker],
 area[craft=photographer],
