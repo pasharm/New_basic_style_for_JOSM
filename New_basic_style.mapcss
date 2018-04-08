@@ -3,7 +3,7 @@ meta
 {
     title: "New basic style";
     description: "Style is made in the likeness of the id editor from the web version of openstreetmap.org. Зауваження та побажання пишіть на https://github.com/pasharm/New_basic_style_for_JOSM/issues";
-    version: "13_2018-04-05";
+    version: "14_2018-04-08";
     author: "Mokrynskyi Pavlo";
     link: "https://github.com/pasharm/New_basic_style_for_JOSM";
     watch-modified: true;
@@ -74,8 +74,8 @@ area[setting("partial_fill")]:closed2 {
 
 /*** Точки (Node) ***/
 
-node|z17-21 { symbol-shape: circle; symbol-size: 6; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
-node|z10-16 { symbol-shape: circle; symbol-size: 0.001; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
+node|z17- { symbol-shape: circle; symbol-size: 6; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
+node|z-16 { symbol-shape: circle; symbol-size: 0.001; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
 
 node:selected { symbol-shape: circle; symbol-size: 8; symbol-fill-color: node_selected#FF2F14; symbol-stroke-color: node_selected#ffffff; }
 
@@ -83,198 +83,226 @@ node:connection { symbol-shape: circle; symbol-fill-color: #BBBBBB; symbol-strok
 
 /* Точки на дорогах */
 
-way[highway]>node|z17-21 { symbol-shape: circle; symbol-size: 8; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
+way[highway]>node|z17- { symbol-shape: circle; symbol-size: 8; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
 way[highway]>node|z16-16 { symbol-shape: circle; symbol-size: 6; symbol-fill-color: #ffffff; symbol-stroke-color: #4A4A4A; }
 
-way[highway]>node|z17-21:selected { object-z-index: 0; symbol-shape: circle; symbol-size: 10; symbol-fill-color: #FF2F14; symbol-stroke-color: #ffffff; }
-way[highway]>node|z10-16:selected { object-z-index: 0; symbol-shape: circle; symbol-size: 8; symbol-fill-color: #FF2F14; symbol-stroke-color: #ffffff; }
+way[highway]>node|z17-:selected { object-z-index: 0; symbol-shape: circle; symbol-size: 10; symbol-fill-color: #FF2F14; symbol-stroke-color: #ffffff; }
+way[highway]>node|z-16:selected { object-z-index: 0; symbol-shape: circle; symbol-size: 8; symbol-fill-color: #FF2F14; symbol-stroke-color: #ffffff; }
 
 
 
 /*** Заливка ***/
 
-area[amenity], area[landuse], area[leisure], area[natural], area[building] { width: 1; }
+way|z17-[amenity],
+way|z17-[landuse],
+way|z17-[leisure],
+way|z17-[natural],
+way|z17-[building]
+ { width: 2; }
+
+way|z17-[amenity]::dashes,
+way|z17-[landuse]::dashes,
+way|z17-[leisure]::dashes,
+way|z17-[natural]::dashes,
+way|z17-[building]::dashes 
+ { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+
+
+way|z-16[amenity],
+way|z-16[landuse],
+way|z-16[leisure],
+way|z-16[natural],
+way|z-16[building]
+ { width: 1; }
+
+way|z-16[amenity]::dashes,
+way|z-16[landuse]::dashes,
+way|z-16[leisure]::dashes,
+way|z-16[natural]::dashes,
+way|z-16[building]::dashes 
+ { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+
 
 area { color: ; fill-opacity: 0.25; }
 
 /*** Дорожные объекты (Roads) - highway ***/
 
-way|z17-21[highway=residential] { z-index: 6; color: #ffffff; width: 7; casing-color: #444444; casing-width: 1; }
-way|z10-16[highway=residential] { z-index: 6; color: #ffffff; width: 4; casing-color: #444444; casing-width: 1; }
+way|z17-[highway=residential] { z-index: 6; color: #ffffff; width: 7; casing-color: #444444; casing-width: 1; }
+way|z-16[highway=residential] { z-index: 6; color: #ffffff; width: 4; casing-color: #444444; casing-width: 1; }
 
 
-way|z17-21[highway=motorway],
-way|z17-21[highway=motorway_link] { z-index: 6; color: #CF2081; width: 9; casing-color: #70372f; casing-width: 1; }
+way|z17-[highway=motorway],
+way|z17-[highway=motorway_link] { z-index: 6; color: #CF2081; width: 9; casing-color: #70372f; casing-width: 1; }
 
-way|z10-16[highway=motorway],
-way|z10-16[highway=motorway_link] { z-index: 6; color: #CF2081; width: 4; casing-color: #70372f; casing-width: 1; }
-
-
-way|z17-21[highway=trunk],
-way|z17-21[highway=trunk_link] { z-index: 6; color: #DD2F22; width: 8; casing-color: #70372f; casing-width: 1; }
-
-way|z10-16[highway=trunk],
-way|z10-16[highway=trunk_link] { z-index: 6; color: #DD2F22; width: 4; casing-color: #70372f; casing-width: 1; }
+way|z-16[highway=motorway],
+way|z-16[highway=motorway_link] { z-index: 6; color: #CF2081; width: 4; casing-color: #70372f; casing-width: 1; }
 
 
-way|z17-21[highway=primary],
-way|z17-21[highway=primary_link] { z-index: 6; color: #F99806; width: 8; casing-color: #70372f; casing-width: 1; }
+way|z17-[highway=trunk],
+way|z17-[highway=trunk_link] { z-index: 6; color: #DD2F22; width: 8; casing-color: #70372f; casing-width: 1; }
 
-way|z10-16[highway=primary],
-way|z10-16[highway=primary_link] { z-index: 6; color: #F99806; width: 4; casing-color: #70372f; casing-width: 1; }
-
-
-way|z17-21[highway=secondary],
-way|z17-21[highway=secondary_link] { z-index: 6; color: #F3F312; width: 8; casing-color: #70372f; casing-width: 1; }
-
-way|z10-16[highway=secondary],
-way|z10-16[highway=secondary_link] { z-index: 6; color: #F3F312; width: 4; casing-color: #70372f; casing-width: 1; }
+way|z-16[highway=trunk],
+way|z-16[highway=trunk_link] { z-index: 6; color: #DD2F22; width: 4; casing-color: #70372f; casing-width: 1; }
 
 
-way|z17-21[highway=tertiary],
-way|z17-21[highway=tertiary_link] { z-index: 6; color: #FFF9B3; width: 8; casing-color: #70372f; casing-width: 1; }
+way|z17-[highway=primary],
+way|z17-[highway=primary_link] { z-index: 6; color: #F99806; width: 8; casing-color: #70372f; casing-width: 1; }
 
-way|z10-16[highway=tertiary],
-way|z10-16[highway=tertiary_link] { z-index: 6; color: #FFF9B3; width: 4; casing-color: #70372f; casing-width: 1; }
-
-
-way|z17-21[highway=living_street] { z-index: 6; color: #bbbbbb; width: 6; casing-color: #dddddd; casing-width: 1; }
-
-way|z10-16[highway=living_street] { z-index: 6; color: #bbbbbb; width: 3; casing-color: #dddddd; casing-width: 1; }
+way|z-16[highway=primary],
+way|z-16[highway=primary_link] { z-index: 6; color: #F99806; width: 4; casing-color: #70372f; casing-width: 1; }
 
 
-way|z17-21[highway=unclassified] { z-index: 6; color: #dcd9b9; width: 7; casing-color: #444444; casing-width: 1; }
-way|z10-16[highway=unclassified] { z-index: 6; color: #dcd9b9; width: 3; casing-color: #444444; casing-width: 1; }
+way|z17-[highway=secondary],
+way|z17-[highway=secondary_link] { z-index: 6; color: #F3F312; width: 8; casing-color: #70372f; casing-width: 1; }
+
+way|z-16[highway=secondary],
+way|z-16[highway=secondary_link] { z-index: 6; color: #F3F312; width: 4; casing-color: #70372f; casing-width: 1; }
 
 
-way|z17-21[highway=service] { z-index: 6; color: #ffffff; width: 4; casing-color: #666666; casing-width: 1; }
-way|z10-16[highway=service] { z-index: 6; color: #ffffff; width: 2; casing-color: #666666; casing-width: 1; }
+way|z17-[highway=tertiary],
+way|z17-[highway=tertiary_link] { z-index: 6; color: #FFF9B3; width: 8; casing-color: #70372f; casing-width: 1; }
+
+way|z-16[highway=tertiary],
+way|z-16[highway=tertiary_link] { z-index: 6; color: #FFF9B3; width: 4; casing-color: #70372f; casing-width: 1; }
 
 
-way|z17-21[highway=track] { z-index: 6; color: #C5B59F;  width: 5;  dashes: 4, 4;  linecap: round; }
-way|z17-21[highway=track]::left { z-index: 7;  color: #C9C2B9;  width: 1;  dashes: 4, 4;  offset: -3; linecap: round; }
+way|z17-[highway=living_street] { z-index: 6; color: #bbbbbb; width: 6; casing-color: #dddddd; casing-width: 1; }
 
-way|z17-21[highway=track]::right { z-index: 7;  color: #C9C2B9;  width: 1;  dashes: 4, 4;  offset: 3; linecap: round; }
-way|z10-16[highway=track] { z-index: 6; color: #C5B59F;  width: 2;  dashes: 4, 4;  linecap: round; }
+way|z-16[highway=living_street] { z-index: 6; color: #bbbbbb; width: 3; casing-color: #dddddd; casing-width: 1; }
 
 
-way|z17-21[highway=road] { color: #9e9e9e; width: 4; casing-color: #666666; casing-width: 1; }
-way|z10-16[highway=road] { color: #9e9e9e; width: 2; casing-color: #666666; casing-width: 1; }
+way|z17-[highway=unclassified] { z-index: 6; color: #dcd9b9; width: 7; casing-color: #444444; casing-width: 1; }
+way|z-16[highway=unclassified] { z-index: 6; color: #dcd9b9; width: 3; casing-color: #444444; casing-width: 1; }
+
+
+way|z17-[highway=service] { z-index: 6; color: #ffffff; width: 4; casing-color: #666666; casing-width: 1; }
+way|z-16[highway=service] { z-index: 6; color: #ffffff; width: 2; casing-color: #666666; casing-width: 1; }
+
+
+way|z17-[highway=track] { z-index: 6; color: #C5B59F;  width: 5;  dashes: 4, 4;  linecap: round; }
+way|z17-[highway=track]::left { z-index: 7;  color: #C9C2B9;  width: 1;  dashes: 4, 4;  offset: -3; linecap: round; }
+
+way|z17-[highway=track]::right { z-index: 7;  color: #C9C2B9;  width: 1;  dashes: 4, 4;  offset: 3; linecap: round; }
+way|z-16[highway=track] { z-index: 6; color: #C5B59F;  width: 2;  dashes: 4, 4;  linecap: round; }
+
+
+way|z17-[highway=road] { color: #9e9e9e; width: 4; casing-color: #666666; casing-width: 1; }
+way|z-16[highway=road] { color: #9e9e9e; width: 2; casing-color: #666666; casing-width: 1; }
 
 
 
 /* Текст на дорогах */
 
-way|z17-21[highway] { z-index: 5;  text: auto;  text-color: black;  font-size: 12;  text-position: line;  text-halo-color: white;  text-halo-radius: 2;  linecap: round;  casing-linecap: round }
+way|z17-[highway] { z-index: 5;  text: auto;  text-color: black;  font-size: 12;  text-position: line;  text-halo-color: white;  text-halo-radius: 2;  linecap: round;  casing-linecap: round }
 
 way|z13-17[highway=primary] { z-index: 5;  text: auto;  text-color: black;  font-size: 12;  text-position: line;  text-halo-color: white;  text-halo-radius: 2;  linecap: round;  casing-linecap: round }
 
 
 /*** Железнодорожные объекты - railway ***/
 
-way|z17-21[railway=rail],
-way|z17-21[railway=tram],
-way|z17-21[railway=monorail] { z-index: 6; color: #555555;  width: 6;  dashes: 0, 0;  }
-way|z10-16[railway=rail],
-way|z10-16[railway=tram],
-way|z10-16[railway=monorail] { z-index: 6; color: #555555;  width: 3;  dashes: 0, 0;  }
+way|z17-[railway=rail],
+way|z17-[railway=tram],
+way|z17-[railway=monorail] { z-index: 6; color: #555555;  width: 6;  dashes: 0, 0;  }
+way|z-16[railway=rail],
+way|z-16[railway=tram],
+way|z-16[railway=monorail] { z-index: 6; color: #555555;  width: 3;  dashes: 0, 0;  }
 
-way|z17-21[railway=rail]::dashes,
-way|z17-21[railway=tram]::dashes,
-way|z17-21[railway=monorail]::dashes { z-index: 7;  color: #EEEEEE;  width: 2;  dashes: 12,12;  }
-way|z10-16[railway=rail]::dashes,
-way|z10-16[railway=tram]::dashes,
-way|z10-16[railway=monorail]::dashes { z-index: 7;  color: #EEEEEE;  width: 2;  dashes: 12,12;  }
+way|z17-[railway=rail]::dashes,
+way|z17-[railway=tram]::dashes,
+way|z17-[railway=monorail]::dashes { z-index: 7;  color: #EEEEEE;  width: 2;  dashes: 12,12;  }
+way|z-16[railway=rail]::dashes,
+way|z-16[railway=tram]::dashes,
+way|z-16[railway=monorail]::dashes { z-index: 7;  color: #EEEEEE;  width: 2;  dashes: 12,12;  }
 
-way|z17-21[railway=subway] { z-index: 6; color: #222222;  width: 6;  dashes: 0, 0;  }
-way|z10-16[railway=subway] { z-index: 6; color: #222222;  width: 3;  dashes: 0, 0;  }
+way|z17-[railway=subway] { z-index: 6; color: #222222;  width: 6;  dashes: 0, 0;  }
+way|z-16[railway=subway] { z-index: 6; color: #222222;  width: 3;  dashes: 0, 0;  }
 
-way|z17-21[railway=subway]::dashes { z-index: 7;  color: #BBBBBB;  width: 2;  dashes: 12,12;  }
-way|z10-16[railway=subway]::dashes { z-index: 7;  color: #BBBBBB;  width: 1;  dashes: 12,12;  }
+way|z17-[railway=subway]::dashes { z-index: 7;  color: #BBBBBB;  width: 2;  dashes: 12,12;  }
+way|z-16[railway=subway]::dashes { z-index: 7;  color: #BBBBBB;  width: 1;  dashes: 12,12;  }
 
-way|z17-21[railway=disused],
-way|z17-21[railway=abandoned] { z-index: 6; color: #eeeeee;  width: 2;  dashes: 7, 3;  }
-way|z10-16[railway=disused],
-way|z10-16[railway=abandoned] { z-index: 6; color: #eeeeee;  width: 1;  dashes: 7, 3;  }
+way|z17-[railway=disused],
+way|z17-[railway=abandoned] { z-index: 6; color: #eeeeee;  width: 2;  dashes: 7, 3;  }
+way|z-16[railway=disused],
+way|z-16[railway=abandoned] { z-index: 6; color: #eeeeee;  width: 1;  dashes: 7, 3;  }
 
-way|z17-21[railway=disused]::left,
-way|z17-21[railway=abandoned]::left { z-index: 7;  color: #555555;  width: 2;  dashes: 7, 3;  offset: -2; }
-way|z10-16[railway=disused]::left,
-way|z10-16[railway=abandoned]::left { z-index: 7;  color: #555555;  width: 1;  dashes: 7, 3;  offset: -2; }
+way|z17-[railway=disused]::left,
+way|z17-[railway=abandoned]::left { z-index: 7;  color: #555555;  width: 2;  dashes: 7, 3;  offset: -2; }
+way|z-16[railway=disused]::left,
+way|z-16[railway=abandoned]::left { z-index: 7;  color: #555555;  width: 1;  dashes: 7, 3;  offset: -2; }
 
-way|z17-21[railway=disused]::right,
-way|z17-21[railway=abandoned]::right { z-index: 7;  color: #555555;  width: 2;  dashes: 7, 3;  offset: 2; }
-way|z10-16[railway=disused]::right,
-way|z10-16[railway=abandoned]::right { z-index: 7;  color: #555555;  width: 1;  dashes: 7, 3;  offset: 2; }
+way|z17-[railway=disused]::right,
+way|z17-[railway=abandoned]::right { z-index: 7;  color: #555555;  width: 2;  dashes: 7, 3;  offset: 2; }
+way|z-16[railway=disused]::right,
+way|z-16[railway=abandoned]::right { z-index: 7;  color: #555555;  width: 1;  dashes: 7, 3;  offset: 2; }
 
 
 
 /*** Пешеходные дорожки и тропы ***/
 
-way|z17-21[crossing=zebra],
-way|z17-21[footway=sidewal],
-way|z17-21[highway=footway] { z-index: 6; color: #ffffff;  width: 5;  dashes: 0, 0;  }
-way|z10-16[crossing=zebra],
-way|z10-16[footway=sidewal],
-way|z10-16[highway=footway] { z-index: 6; color: #ffffff;  width: 2;  dashes: 0, 0;  }
+way|z17-[crossing=zebra],
+way|z17-[footway=sidewal],
+way|z17-[highway=footway] { z-index: 6; color: #ffffff;  width: 5;  dashes: 0, 0;  }
+way|z-16[crossing=zebra],
+way|z-16[footway=sidewal],
+way|z-16[highway=footway] { z-index: 6; color: #ffffff;  width: 2;  dashes: 0, 0;  }
 
-way|z17-21[crossing=zebra]::dashes,
-way|z17-21[footway=sidewal]::dashes,
-way|z17-21[highway=footway]::dashes { z-index: 7;  color: #AE8681;  width: 3;  dashes: 6,5;  }
-way|z10-16[crossing=zebra]::dashes,
-way|z10-16[footway=sidewal]::dashes,
-way|z10-16[highway=footway]::dashes { z-index: 7;  color: #AE8681;  width: 2;  dashes: 6,5;  }
-
-
-way|z17-21[highway=steps] { z-index: 6; color: #ffffff;  width: 5;  dashes: 0, 0;  }
-way|z10-16[highway=steps] { z-index: 6; color: #ffffff;  width: 2;  dashes: 0, 0;  }
-
-way|z17-21[highway=steps]::dashes { z-index: 7;  color: #81d25c;  width: 3;  dashes: 4,3;  }
-way|z10-16[highway=steps]::dashes { z-index: 7;  color: #81d25c;  width: 2;  dashes: 4,3;  }
+way|z17-[crossing=zebra]::dashes,
+way|z17-[footway=sidewal]::dashes,
+way|z17-[highway=footway]::dashes { z-index: 7;  color: #AE8681;  width: 3;  dashes: 6,5;  }
+way|z-16[crossing=zebra]::dashes,
+way|z-16[footway=sidewal]::dashes,
+way|z-16[highway=footway]::dashes { z-index: 7;  color: #AE8681;  width: 2;  dashes: 6,5;  }
 
 
-way|z17-21[highway=path] { z-index: 6; color: #c5b59f;  width: 5;  dashes: 0, 0;  }
-way|z10-16[highway=path] { z-index: 6; color: #c5b59f;  width: 2;  dashes: 0, 0;  }
+way|z17-[highway=steps] { z-index: 6; color: #ffffff;  width: 5;  dashes: 0, 0;  }
+way|z-16[highway=steps] { z-index: 6; color: #ffffff;  width: 2;  dashes: 0, 0;  }
 
-way|z17-21[highway=path]::dashes { z-index: 7;  color: #746f6f;  width: 3;  dashes: 6,5;  }
-way|z10-16[highway=path]::dashes { z-index: 7;  color: #746f6f;  width: 2;  dashes: 6,5;  }
-
-
-way|z17-21[highway=cycleway] { z-index: 6; color: #ffffff;  width: 5;  dashes: 0, 0;  }
-way|z10-16[highway=cycleway] { z-index: 6; color: #ffffff;  width: 2;  dashes: 0, 0;  }
-
-way|z17-21[highway=cycleway]::dashes { z-index: 7;  color: #58a9ed;  width: 3;  dashes: 6,5;  }
-way|z10-16[highway=cycleway]::dashes { z-index: 7;  color: #58a9ed;  width: 2;  dashes: 6,5;  }
+way|z17-[highway=steps]::dashes { z-index: 7;  color: #81d25c;  width: 3;  dashes: 4,3;  }
+way|z-16[highway=steps]::dashes { z-index: 7;  color: #81d25c;  width: 2;  dashes: 4,3;  }
 
 
-way|z17-21[highway=bridleway] { z-index: 6; color: #ffffff;  width: 5;  dashes: 0, 0;  }
-way|z10-16[highway=bridleway] { z-index: 6; color: #ffffff;  width: 2;  dashes: 0, 0;  }
+way|z17-[highway=path] { z-index: 6; color: #c5b59f;  width: 5;  dashes: 0, 0;  }
+way|z-16[highway=path] { z-index: 6; color: #c5b59f;  width: 2;  dashes: 0, 0;  }
 
-way|z17-21[highway=bridleway]::dashes { z-index: 7;  color: #e06d5f;  width: 3;  dashes: 6,5;  }
-way|z10-16[highway=bridleway]::dashes { z-index: 7;  color: #e06d5f;  width: 2;  dashes: 6,5;  }
+way|z17-[highway=path]::dashes { z-index: 7;  color: #746f6f;  width: 3;  dashes: 6,5;  }
+way|z-16[highway=path]::dashes { z-index: 7;  color: #746f6f;  width: 2;  dashes: 6,5;  }
 
-way|z17-21[highway=pedestrian] { z-index: 6; color: #8cd05f;  width: 5;  dashes: 0, 0;  }
-way|z10-16[highway=pedestrian] { z-index: 6; color: #8cd05f;  width: 2;  dashes: 0, 0;  }
 
-way|z17-21[highway=pedestrian]::dashes { z-index: 7;  color: #ffffff;  width: 3;  dashes: 4,6;  }
-way|z10-16[highway=pedestrian]::dashes { z-index: 7;  color: #ffffff;  width: 2;  dashes: 4,6;  }
+way|z17-[highway=cycleway] { z-index: 6; color: #ffffff;  width: 5;  dashes: 0, 0;  }
+way|z-16[highway=cycleway] { z-index: 6; color: #ffffff;  width: 2;  dashes: 0, 0;  }
+
+way|z17-[highway=cycleway]::dashes { z-index: 7;  color: #58a9ed;  width: 3;  dashes: 6,5;  }
+way|z-16[highway=cycleway]::dashes { z-index: 7;  color: #58a9ed;  width: 2;  dashes: 6,5;  }
+
+
+way|z17-[highway=bridleway] { z-index: 6; color: #ffffff;  width: 5;  dashes: 0, 0;  }
+way|z-16[highway=bridleway] { z-index: 6; color: #ffffff;  width: 2;  dashes: 0, 0;  }
+
+way|z17-[highway=bridleway]::dashes { z-index: 7;  color: #e06d5f;  width: 3;  dashes: 6,5;  }
+way|z-16[highway=bridleway]::dashes { z-index: 7;  color: #e06d5f;  width: 2;  dashes: 6,5;  }
+
+way|z17-[highway=pedestrian] { z-index: 6; color: #8cd05f;  width: 5;  dashes: 0, 0;  }
+way|z-16[highway=pedestrian] { z-index: 6; color: #8cd05f;  width: 2;  dashes: 0, 0;  }
+
+way|z17-[highway=pedestrian]::dashes { z-index: 7;  color: #ffffff;  width: 3;  dashes: 4,6;  }
+way|z-16[highway=pedestrian]::dashes { z-index: 7;  color: #ffffff;  width: 2;  dashes: 4,6;  }
 
 /*** TODO: добавить highway=construction ***/
 
 /*** Водные объекты  ***/
 
-way|z17-21[waterway=river] { color: #0000ff; width: 7; casing-color: #0000A7; casing-width: 1; }
-way|z10-16[waterway=river] { color: #0000ff; width: 3; casing-color: #0000A7; casing-width: 1; }
+way|z17-[waterway=river] { color: #0000ff; width: 7; casing-color: #0000A7; casing-width: 1; }
+way|z-16[waterway=river] { color: #0000ff; width: 3; casing-color: #0000A7; casing-width: 1; }
 
-way|z17-21[waterway=stream],
-way|z17-21[waterway=canal],
-way|z17-21[waterway=drain] { color: #0000ff; width: 4; casing-color: #0000A7; casing-width: 1; }
-way|z10-16[waterway=stream],
-way|z10-16[waterway=canal],
-way|z10-16[waterway=drain] { color: #0000ff; width: 2; casing-color: #0000A7; casing-width: 1; }
+way|z17-[waterway=stream],
+way|z17-[waterway=canal],
+way|z17-[waterway=drain] { color: #0000ff; width: 4; casing-color: #0000A7; casing-width: 1; }
+way|z-16[waterway=stream],
+way|z-16[waterway=canal],
+way|z-16[waterway=drain] { color: #0000ff; width: 2; casing-color: #0000A7; casing-width: 1; }
 
-way|z17-21[waterway=ditch] { color: #567BD6; width: 4; casing-color: #254B51; casing-width: 1; }
-way|z10-16[waterway=ditch] { color: #567BD6; width: 2; casing-color: #254B51; casing-width: 1; }
+way|z17-[waterway=ditch] { color: #567BD6; width: 4; casing-color: #254B51; casing-width: 1; }
+way|z-16[waterway=ditch] { color: #567BD6; width: 2; casing-color: #254B51; casing-width: 1; }
 
 
 
@@ -282,66 +310,66 @@ way|z10-16[waterway=ditch] { color: #567BD6; width: 2; casing-color: #254B51; ca
 
 /* Забор */
 
-area|z17-21[barrier=fence] { color: #DDDDDD; width: 3; dashes: 15,6,1,6; linecap: square; }
-area|z10-16[barrier=fence] { color: #DDDDDD; width: 1; dashes: 15,6,1,6; linecap: square; }
+area|z17-[barrier=fence] { color: #DDDDDD; width: 3; dashes: 15,6,1,6; linecap: square; }
+area|z-16[barrier=fence] { color: #DDDDDD; width: 1; dashes: 15,6,1,6; linecap: square; }
 
 /* Непрозрачная стена */
 
-area|z17-21[barrier=wall] { color: #FFFFFF; width: 3; dashes: 15,6,1,6; linecap: round; opacity: 0.5; }
-area|z10-16[barrier=wall] { color: #FFFFFF; width: 1; dashes: 15,6,1,6; linecap: round; opacity: 0.5; }
+area|z17-[barrier=wall] { color: #FFFFFF; width: 3; dashes: 15,6,1,6; linecap: round; opacity: 0.5; }
+area|z-16[barrier=wall] { color: #FFFFFF; width: 1; dashes: 15,6,1,6; linecap: round; opacity: 0.5; }
 
 /* Ров */
 
-way|z17-21[barrier=ditch] { z-index: 6; color: #282828;  width:3;  dashes: 0, 0; linecap: square; }
-way|z17-21[barrier=ditch]::dashes { z-index: 7;  color: #836D30;  width: 3;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
-way|z10-16[barrier=ditch] { z-index: 6; color: #282828;  width:1;  dashes: 0, 0; linecap: square; }
-way|z10-16[barrier=ditch]::dashes { z-index: 7;  color: #836D30;  width: 1;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
+way|z17-[barrier=ditch] { z-index: 6; color: #282828;  width:3;  dashes: 0, 0; linecap: square; }
+way|z17-[barrier=ditch]::dashes { z-index: 7;  color: #836D30;  width: 3;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
+way|z-16[barrier=ditch] { z-index: 6; color: #282828;  width:1;  dashes: 0, 0; linecap: square; }
+way|z-16[barrier=ditch]::dashes { z-index: 7;  color: #836D30;  width: 1;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
 
 /* Ворота / калитка */
 
-way|z17-21[barrier=gate] { z-index: 6; color: #DDDDDD;  width:3;  dashes: 0, 0; linecap: square; }
-way|z17-21[barrier=gate]::dashes { z-index: 7;  color: #00B422;  width: 3;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
-way|z10-16[barrier=gate] { z-index: 6; color: #DDDDDD;  width:1;  dashes: 0, 0; linecap: square; }
-way|z10-16[barrier=gate]::dashes { z-index: 7;  color: #00B422;  width: 1;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
+way|z17-[barrier=gate] { z-index: 6; color: #DDDDDD;  width:3;  dashes: 0, 0; linecap: square; }
+way|z17-[barrier=gate]::dashes { z-index: 7;  color: #00B422;  width: 3;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
+way|z-16[barrier=gate] { z-index: 6; color: #DDDDDD;  width:1;  dashes: 0, 0; linecap: square; }
+way|z-16[barrier=gate]::dashes { z-index: 7;  color: #00B422;  width: 1;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
 
 /* Живая изгородь */
 
-way|z17-21[barrier=hedge] { z-index: 6; color: #282828;  width:3;  dashes: 0, 0; linecap: square;  }
-way|z17-21[barrier=hedge]::dashes { z-index: 7;  color: #00B422;  width: 3;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
-way|z10-16[barrier=hedge] { z-index: 6; color: #282828;  width:1;  dashes: 0, 0; linecap: square;  }
-way|z10-16[barrier=hedge]::dashes { z-index: 7;  color: #00B422;  width: 1;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
+way|z17-[barrier=hedge] { z-index: 6; color: #282828;  width:3;  dashes: 0, 0; linecap: square;  }
+way|z17-[barrier=hedge]::dashes { z-index: 7;  color: #00B422;  width: 3;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
+way|z-16[barrier=hedge] { z-index: 6; color: #282828;  width:1;  dashes: 0, 0; linecap: square;  }
+way|z-16[barrier=hedge]::dashes { z-index: 7;  color: #00B422;  width: 1;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
 
 /* Преграда */
 
-way|z17-21[barrier=yes] { z-index: 6; color: #ffffff;  width:3;  dashes: 0, 0; linecap: square; }
-way|z17-21[barrier=yes]::dashes { z-index: 7;  color: #836D30;  width: 3;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
-way|z10-16[barrier=yes] { z-index: 6; color: #ffffff;  width:1;  dashes: 0, 0; linecap: square; }
-way|z10-16[barrier=yes]::dashes { z-index: 7;  color: #836D30;  width: 1;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
+way|z17-[barrier=yes] { z-index: 6; color: #ffffff;  width:3;  dashes: 0, 0; linecap: square; }
+way|z17-[barrier=yes]::dashes { z-index: 7;  color: #836D30;  width: 3;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
+way|z-16[barrier=yes] { z-index: 6; color: #ffffff;  width:1;  dashes: 0, 0; linecap: square; }
+way|z-16[barrier=yes]::dashes { z-index: 7;  color: #836D30;  width: 1;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
 
 
 
 /*** Природные объекты ***/
 
-way|z17-21[natural=coastline] {width: 2; color: water#0000ff; right-casing-color: water#0000ff; right-casing-width: 5; right-casing-opacity: 0.30; }
-way|z10-16[natural=coastline] {width: 1; color: water#0000ff; right-casing-color: water#0000ff; right-casing-width: 2; right-casing-opacity: 0.30; }
+way|z17-[natural=coastline] {width: 2; color: water#0000ff; right-casing-color: water#0000ff; right-casing-width: 5; right-casing-opacity: 0.30; }
+way|z-16[natural=coastline] {width: 1; color: water#0000ff; right-casing-color: water#0000ff; right-casing-width: 2; right-casing-opacity: 0.30; }
 
-way|z17-21[natural=tree_row] { width: 2; color: woodarea#008000; }
-way|z17-21[natural=tree_row]::dashes { color: #025902;  width: 8;  dashes: 1,12; linecap: round; opacity: 0.6; }
-way|z10-16[natural=tree_row] { width: 1; color: woodarea#008000; }
-way|z10-16[natural=tree_row]::dashes { color: #025902;  width: 4;  dashes: 1,12; linecap: round; opacity: 0.6; }
+way|z17-[natural=tree_row] { width: 2; color: woodarea#008000; }
+way|z17-[natural=tree_row]::dashes { color: #025902;  width: 8;  dashes: 1,12; linecap: round; opacity: 0.6; }
+way|z-16[natural=tree_row] { width: 1; color: woodarea#008000; }
+way|z-16[natural=tree_row]::dashes { color: #025902;  width: 4;  dashes: 1,12; linecap: round; opacity: 0.6; }
 
 
 /*** Энергетика ***/
 
 /* Высоковольтная ЛЭП */
 
-way|z17-21[power=line] {z-index: 5; color: darkgray; width: 3; dashes: 12,2; casing-color: black; casing-width: 2; casing-dashes: 4, 38; }
-way|z10-16[power=line] {z-index: 5; color: darkgray; width: 1; dashes: 12,2; casing-color: black; casing-width: 1; casing-dashes: 4, 38; }
+way|z17-[power=line] {z-index: 5; color: darkgray; width: 3; dashes: 12,2; casing-color: black; casing-width: 2; casing-dashes: 4, 38; }
+way|z-16[power=line] {z-index: 5; color: darkgray; width: 1; dashes: 12,2; casing-color: black; casing-width: 1; casing-dashes: 4, 38; }
 
 /* Низковольтная ЛЭП */
 
-way|z17-21[power=minor_line] {z-index: 5; color: gray; width: 2; dashes: 12,2; casing-color: white; casing-width: 2; casing-dashes: 4, 38;}
-way|z10-16[power=minor_line] {z-index: 5; color: gray; width: 1; dashes: 12,2; casing-color: white; casing-width: 1; casing-dashes: 4, 38;}
+way|z17-[power=minor_line] {z-index: 5; color: gray; width: 2; dashes: 12,2; casing-color: white; casing-width: 2; casing-dashes: 4, 38;}
+way|z-16[power=minor_line] {z-index: 5; color: gray; width: 1; dashes: 12,2; casing-color: white; casing-width: 1; casing-dashes: 4, 38;}
 
 
 area[power=plant],
@@ -410,22 +438,11 @@ area[landuse=military] { fill-color: #FF4444; fill-image: "https://pasharm.githu
 relation[type=multipolygon][landuse=military] >[role="inner"] way,
 relation[type=multipolygon][landuse=military] >[role="outer"] way { color: #FF4444; width: 1; }
 
-way|z17-21[landuse=military] { width: 1; color: #FF4444; }
-way|z17-21[landuse=military]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[landuse=military] { width: 1; color: #FF4444; }
-way|z10-16[landuse=military]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-
 
 area[military] { fill-color: #FF4444; }
 
 relation[type=multipolygon][military] >[role="inner"] way,
 relation[type=multipolygon][military] >[role="outer"] way { color: #FF4444; width: 1; }
-
-way|z17-21[military] { width: 1; color: #FF4444; }
-way|z17-21[military]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[military] { width: 1; color: #FF4444; }
-way|z10-16[military]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-
 
 area[landuse=vineyard] { fill-color: #AEDFA3; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/vineyard1.png"}
 
@@ -437,60 +454,30 @@ area[landuse=farmland] { fill-color: #bfe83f; fill-image: "https://pasharm.githu
 relation[type=multipolygon][landuse=farmland] >[role="inner"] way,
 relation[type=multipolygon][landuse=farmland] >[role="outer"] way { color: #bfe83f; width: 1; }
 
-way|z17-21[landuse=farmland] { width: 1; color: #bfe83f; }
-way|z17-21[landuse=farmland]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[landuse=farmland] { width: 1; color: #bfe83f; }
-way|z10-16[landuse=farmland]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-
 area[landuse=cemetery] { fill-color: #BFE83F; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/cemetery1.png"}
 
 relation[type=multipolygon][landuse=cemetery] >[role="inner"] way,
 relation[type=multipolygon][landuse=cemetery] >[role="outer"] way { color: #BFE83F; width: 1; }
-
-way|z17-21[landuse=cemetery] { width: 1; color: #BFE83F; }
-way|z17-21[landuse=cemetery]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[landuse=cemetery] { width: 1; color: #BFE83F; }
-way|z10-16[landuse=cemetery]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
 
 area[amenity=grave_yard] { fill-color: #BFE83F; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/grave_yard1.png"}
 
 relation[type=multipolygon][amenity=grave_yard] >[role="inner"] way,
 relation[type=multipolygon][amenity=grave_yard] >[role="outer"] way { color: #BFE83F; width: 1; }
 
-way|z17-21[landuse=grave_yard] { width: 1; color: #BFE83F; }
-way|z17-21[landuse=grave_yard]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[landuse=grave_yard] { width: 1; color: #BFE83F; }
-way|z10-16[landuse=grave_yard]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-
 area[landuse=meadow] { fill-color: #99ffaa; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/meadownew1.png"}
 
 relation[type=multipolygon][landuse=meadow] >[role="inner"] way,
 relation[type=multipolygon][landuse=meadow] >[role="outer"] way { color: #99ffaa; width: 1; }
-
-way|z17-21[landuse=meadow] { width: 1; color: #99ffaa; }
-way|z17-21[landuse=meadow]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[landuse=meadow] { width: 1; color: #99ffaa; }
-way|z10-16[landuse=meadow]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
 
 area[landuse=orchard] { fill-color: #BFE83F; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/orchard1.png"}
 
 relation[type=multipolygon][landuse=orchard] >[role="inner"] way,
 relation[type=multipolygon][landuse=orchard] >[role="outer"] way { color: #BFE83F; width: 1; }
 
-way|z17-21[landuse=orchard] { width: 1; color: #BFE83F; }
-way|z17-21[landuse=orchard]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[landuse=orchard] { width: 1; color: #bfe83f; }
-way|z10-16[landuse=orchard]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-
 area[landuse=allotments] { fill-color: #5ab741; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/allotments1.png"}
 
 relation[type=multipolygon][landuse=allotments] >[role="inner"] way,
 relation[type=multipolygon][landuse=allotments] >[role="outer"] way { color: #5ab741; width: 1; }
-
-way|z17-21[landuse=allotments] { width: 1; color: #5ab741; }
-way|z17-21[landuse=allotments]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[landuse=allotments] { width: 1; color: #5ab741; }
-way|z10-16[landuse=allotments]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
 
 area[landuse=farm] { fill-color: #BFE83F; }
 
@@ -507,20 +494,10 @@ area[natural=wood] { fill-color: #5AB741; fill-image: "https://pasharm.github.io
 relation[type=multipolygon][natural=wood] >[role="inner"] way,
 relation[type=multipolygon][natural=wood] >[role="outer"] way { color: #5AB741; width: 1; }
 
-way|z17-21[natural=wood] { width: 1; color: #5ab741; }
-way|z17-21[natural=wood]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[natural=wood] { width: 1; color: #5ab741; }
-way|z10-16[natural=wood]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-
 area[landuse=forest] { fill-color: #5AB741; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/wood1.png"}
 
 relation[type=multipolygon][landuse=forest] >[role="inner"] way,
 relation[type=multipolygon][landuse=forest] >[role="outer"] way { color: #5AB741; width: 1; }
-
-way|z17-21[landuse=forest] { width: 1; color: #5ab741; }
-way|z17-21[landuse=forest]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[landuse=forest] { width: 1; color: #5ab741; }
-way|z10-16[landuse=forest]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
 
 area[natural=grass],
 area[landuse=grass],
@@ -564,11 +541,6 @@ area[natural=wetland] { fill-color: #99ffaa; fill-image: "https://pasharm.github
 relation[type=multipolygon][natural=wetland] >[role="inner"] way,
 relation[type=multipolygon][natural=wetland] >[role="outer"] way { color: #99ffaa; width: 1; }
 
-way|z17-21[natural=wetland] { width: 1; color: #99ffaa; }
-way|z17-21[natural=wetland]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[natural=wetland] { width: 1; color: #99ffaa; }
-way|z10-16[natural=wetland]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-
 
 area[amenity=swimming_pool],
 area[landuse=aquaculture],
@@ -604,11 +576,6 @@ area[landuse=quarry] { fill-color: #8C8C8C; fill-image: "https://pasharm.github.
 
 relation[type=multipolygon][landuse=quarry] >[role="inner"] way,
 relation[type=multipolygon][landuse=quarry] >[role="outer"] way { color: #8C8C8C; width: 1; }
-
-way|z17-21[landuse=quarry] { width: 1; color: #8C8C8C; }
-way|z17-21[landuse=quarry]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[landuse=quarry] { width: 1; color: #8C8C8C; }
-way|z10-16[landuse=quarry]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
 
 area[amenity=parking],
 area[natural=bare_rock],
@@ -671,30 +638,15 @@ area[landuse=scrub] { fill-color: #99ffaa; fill-image: "https://pasharm.github.i
 relation[type=multipolygon][landuse=scrub] >[role="inner"] way,
 relation[type=multipolygon][landuse=scrub] >[role="outer"] way { color: #99ffaa; width: 1; }
 
-way|z17-21[landuse=scrub] { width: 1; color: #99ffaa; }
-way|z17-21[landuse=scrub]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[landuse=scrub] { width: 1; color: #99ffaa; }
-way|z10-16[landuse=scrub]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
- 
 area[natural=scrub] { fill-color: #5AB741; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/scrubnew1.png"}
 
 relation[type=multipolygon][natural=scrub] >[role="inner"] way,
 relation[type=multipolygon][natural=scrub] >[role="outer"] way { color: #5AB741; width: 1; }
 
-way|z17-21[landuse=scrub] { width: 1; color: #99ffaa; }
-way|z17-21[landuse=scrub]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[landuse=scrub] { width: 1; color: #99ffaa; }
-way|z10-16[landuse=scrub]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-
 area[natural=beach] { fill-color: #FFFF94; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/beach1.png"}
 
 relation[type=multipolygon][natural=beach] >[role="inner"] way,
 relation[type=multipolygon][natural=beach] >[role="outer"] way { color: #FFFF94; width: 1; }
-
-way|z17-21[natural=beach] { width: 1; color: #FFFF94; }
-way|z17-21[natural=beach]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[natural=beach] { width: 1; color: #FFFF94; }
-way|z10-16[natural=beach]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
 
 area[natural=sand],
 area[amenity=childcare],
@@ -727,21 +679,11 @@ area[amenity=hospital] { fill-color: #c9dfec; }
 relation[type=multipolygon][amenity=hospital] >[role="inner"] way,
 relation[type=multipolygon][amenity=hospital] >[role="outer"] way { color: #c9dfec; width: 1; }
 
-way|z17-21[amenity=hospital] { width: 1; color: #c9dfec; }
-way|z17-21[amenity=hospital]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[amenity=hospital] { width: 1; color: #c9dfec; }
-way|z10-16[amenity=hospital]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-
 
 area[leisure=stadium] { fill-color: #8beba3; }
 
 relation[type=multipolygon][leisure=stadium] >[role="inner"] way,
 relation[type=multipolygon][leisure=stadium] >[role="outer"] way { color: #8beba3; width: 1; }
-
-way|z17-21[leisure=stadium] { width: 1; color: #8beba3; }
-way|z17-21[leisure=stadium]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[leisure=stadium] { width: 1; color: #8beba3; }
-way|z10-16[leisure=stadium]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
 
 
 area[leisure=track] { fill-color: #7ae3ab; }
@@ -749,21 +691,11 @@ area[leisure=track] { fill-color: #7ae3ab; }
 relation[type=multipolygon][leisure=track] >[role="inner"] way,
 relation[type=multipolygon][leisure=track] >[role="outer"] way { color: #7ae3ab; width: 1; }
 
-way|z17-21[leisure=track] { width: 1; color: #7ae3ab; }
-way|z17-21[leisure=track]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[leisure=track] { width: 1; color: #7ae3ab; }
-way|z10-16[leisure=track]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-
 
 area[leisure=playground] { fill-color: #b3efcd; }
 
 relation[type=multipolygon][leisure=playground] >[role="inner"] way,
 relation[type=multipolygon][leisure=playground] >[role="outer"] way { color: #b3efcd; width: 1; }
-
-way|z17-21[leisure=playground] { width: 1; color: #b3efcd; }
-way|z17-21[leisure=playground]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-way|z10-16[leisure=playground] { width: 1; color: #b3efcd; }
-way|z10-16[leisure=playground]::dashes { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
 
 
 area[highway=pedestrian][area=yes] { fill-color: #ededed; }
@@ -874,10 +806,10 @@ way[landuse=construction] { width: 2; color: #ffff00; dashes: 9,9; }
 
 
 
-area|z17-21[building],
-area|z17-21[building=roof],
-area|z17-21[building][!building?!][wall?!],
-area|z17-21[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 1; fill-color: #E06E5F; fill-opacity: 0.3; }
+area|z17-[building],
+area|z17-[building=roof],
+area|z17-[building][!building?!][wall?!],
+area|z17-[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 1; fill-color: #E06E5F; fill-opacity: 0.3; }
 
 area|z16[building],
 area|z16[building=roof],
