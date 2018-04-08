@@ -2,7 +2,7 @@
 meta 
 {
     title: "New basic style";
-    description: "Style is made in the likeness of the id editor from the web version of openstreetmap.org. Зауваження та побажання пишіть на https://github.com/pasharm/New_basic_style_for_JOSM/issues";
+    description: "Style is made in the likeness of the id editor from the web version of openstreetmap.org. Use together with the standard one.Comments and suggestions write to https://github.com/pasharm/New_basic_style_for_JOSM/issues";
     version: "14_2018-04-08";
     author: "Mokrynskyi Pavlo";
     link: "https://github.com/pasharm/New_basic_style_for_JOSM";
@@ -12,21 +12,21 @@ meta
 meta[lang=ru]
 {
     title: "Новый базовый стиль";
-    description: "Cтиль сделан по подобию id рeдактора из веб версии openstreetmap.org. Замечания и пожелания пишите на https://github.com/pasharm/New_basic_style_for_JOSM/issues";
+    description: "Cтиль сделан по подобию id рeдактора из веб версии openstreetmap.org. Использовать вместе со стандартным. Замечания и пожелания пишите на https://github.com/pasharm/New_basic_style_for_JOSM/issues";
     author: "Мокринский Павел";
 }
 
 meta[lang=uk]
 {
     title: "Новий базовий стиль";
-    description: "Cтиль зроблений за зразком id рeдактора з веб версії openstreetmap.org. Зауваження та побажання пишіть на https://github.com/pasharm/New_basic_style_for_JOSM/issues";
+    description: "Cтиль зроблений за зразком id рeдактора з веб версії openstreetmap.org. Використовувати разом зі стандартним. Зауваження та побажання пишіть на https://github.com/pasharm/New_basic_style_for_JOSM/issues";
     author: "Мокринський Павло";
 }
 
 meta[lang=de]
 {
     title: "Neuer Grundstil";
-    description: "Der Stil basiert auf der Beispiel-ID des Entwicklers aus der Web-Version von openstreetmap.org. Kommentare und Wünsche schreiben Sie bitte an https://github.com/pasharm/New_basic_style_for_JOSM/issues";
+    description: "Der Stil basiert auf der Beispiel-ID des Entwicklers aus der Web-Version von openstreetmap.org. Verwenden Sie zusammen mit dem Standard. Kommentare und Wünsche schreiben Sie bitte an https://github.com/pasharm/New_basic_style_for_JOSM/issues";
     author: "Mokrinski Pavel";
 }
 
@@ -105,7 +105,7 @@ way|z17-[landuse]::dashes,
 way|z17-[leisure]::dashes,
 way|z17-[natural]::dashes,
 way|z17-[building]::dashes 
- { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+ { width: ;  dashes: 0; linecap: round; opacity: 0.6; }
 
 
 way|z-16[amenity],
@@ -120,10 +120,10 @@ way|z-16[landuse]::dashes,
 way|z-16[leisure]::dashes,
 way|z-16[natural]::dashes,
 way|z-16[building]::dashes 
- { color: #;  width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+ { width: ;  dashes: 0; linecap: round; opacity: 0.6; }
 
 
-area { color: ; fill-opacity: 0.25; }
+area { fill-opacity: 0.25; }
 
 /*** Дорожные объекты (Roads) - highway ***/
 
@@ -381,19 +381,21 @@ area[power=generator] {
 }
 
 relation[type=multipolygon][power=plant] >[role="inner"] way,
-relation[type=multipolygon][power=plant] >[role="outer"] way { color: #eeeeee; width: 1; }
+relation[type=multipolygon][power=plant] >[role="outer"] way,
 
 relation[type=multipolygon][power=substation] >[role="inner"] way,
-relation[type=multipolygon][power=substation] >[role="outer"] way { color: #eeeeee; width: 1; }
+relation[type=multipolygon][power=substation] >[role="outer"] way,
 
 relation[type=multipolygon][power=compensator] >[role="inner"] way,
-relation[type=multipolygon][power=compensator] >[role="outer"] way { color: #eeeeee; width: 1; }
+relation[type=multipolygon][power=compensator] >[role="outer"] way 
 
 relation[type=multipolygon][power=converter] >[role="inner"] way,
-relation[type=multipolygon][power=converter] >[role="outer"] way { color: #eeeeee; width: 1; }
+relation[type=multipolygon][power=converter] >[role="outer"] way, 
 
 relation[type=multipolygon][power=generator] >[role="inner"] way,
-relation[type=multipolygon][power=generator] >[role="outer"] way { color: #eeeeee; width: 1; }
+relation[type=multipolygon][power=generator] >[role="outer"] way { 
+	color: #eeeeee; width: 1; 
+}
 
 
 /*** Объекты землепользования ***/
@@ -402,10 +404,12 @@ area[landuse=residential],
 area[landuse=construction] { fill-color: #FFFF00; } 
 
 relation[type=multipolygon][landuse=residential] >[role="inner"] way,
-relation[type=multipolygon][landuse=residential] >[role="outer"] way { color: #FFFF00; width: 1; }
+relation[type=multipolygon][landuse=residential] >[role="outer"] way,
 
 relation[type=multipolygon][landuse=construction] >[role="inner"] way,
-relation[type=multipolygon][landuse=construction] >[role="outer"] way { color: #FFFF00; width: 1; }
+relation[type=multipolygon][landuse=construction] >[role="outer"] way { 
+	color: #FFFF00; width: 1; 
+}
 
 /* area[landuse=industrial] { fill-color: #C4BD19; } */
 
@@ -413,10 +417,12 @@ area[landuse=industrial],
 area[power=plant]{ fill-color: #E4A4F5; }
 
 relation[type=multipolygon][landuse=industrial] >[role="inner"] way,
-relation[type=multipolygon][landuse=industrial] >[role="outer"] way { color: #E4A4F5; width: 1; }
+relation[type=multipolygon][landuse=industrial] >[role="outer"] way,
 
 relation[type=multipolygon][power=plant] >[role="inner"] way,
-relation[type=multipolygon][power=plant] >[role="outer"] way { color: #E4A4F5; width: 1; }
+relation[type=multipolygon][power=plant] >[role="outer"] way { 
+	color: #E4A4F5; width: 1; 
+}
 
 
 area[landuse=commercial],
@@ -424,13 +430,15 @@ area[landuse=retail],
 area[landuse=landfill] { fill-color: #F1881A; } 
 
 relation[type=multipolygon][landuse=commercial] >[role="inner"] way,
-relation[type=multipolygon][landuse=commercial] >[role="outer"] way { color: #F1881A; width: 1; }
+relation[type=multipolygon][landuse=commercial] >[role="outer"] way,
 
 relation[type=multipolygon][landuse=retail] >[role="inner"] way,
-relation[type=multipolygon][landuse=retail] >[role="outer"] way { color: #F1881A; width: 1; }
+relation[type=multipolygon][landuse=retail] >[role="outer"] way,
 
 relation[type=multipolygon][landuse=landfill] >[role="inner"] way,
-relation[type=multipolygon][landuse=landfill] >[role="outer"] way { color: #F1881A; width: 1; }
+relation[type=multipolygon][landuse=landfill] >[role="outer"] way { 
+	color: #F1881A; width: 1; 
+}
 
 
 area[landuse=military] { fill-color: #FF4444; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/military1.png"}
@@ -508,25 +516,27 @@ area[landuse=nature_reserve],
 area[leisure=garden] { fill-color: #5AB741; }
 
 relation[type=multipolygon][natural=grass] >[role="inner"] way,
-relation[type=multipolygon][natural=grass] >[role="outer"] way { color: #5AB741; width: 1; }
+relation[type=multipolygon][natural=grass] >[role="outer"] way,
 
 relation[type=multipolygon][landuse=grass] >[role="inner"] way,
-relation[type=multipolygon][landuse=grass] >[role="outer"] way { color: #5AB741; width: 1; }
+relation[type=multipolygon][landuse=grass] >[role="outer"] way,
 
 relation[type=multipolygon][landuse=park] >[role="inner"] way,
-relation[type=multipolygon][landuse=park] >[role="outer"] way { color: #5AB741; width: 1; }
+relation[type=multipolygon][landuse=park] >[role="outer"] way,
 
 relation[type=multipolygon][landuse=landuse] >[role="inner"] way,
-relation[type=multipolygon][landuse=landuse] >[role="outer"] way { color: #5AB741; width: 1; }
+relation[type=multipolygon][landuse=landuse] >[role="outer"] way,
 
 relation[type=multipolygon][landuse=natural] >[role="inner"] way,
-relation[type=multipolygon][landuse=natural] >[role="outer"] way { color: #5AB741; width: 1; }
+relation[type=multipolygon][landuse=natural] >[role="outer"] way,
 
 relation[type=multipolygon][landuse=nature_reserve] >[role="inner"] way,
-relation[type=multipolygon][landuse=nature_reserve] >[role="outer"] way { color: #5AB741; width: 1; }
+relation[type=multipolygon][landuse=nature_reserve] >[role="outer"] way,
 
 relation[type=multipolygon][leisure=garden] >[role="inner"] way,
-relation[type=multipolygon][leisure=garden] >[role="outer"] way { color: #5AB741; width: 1; }
+relation[type=multipolygon][leisure=garden] >[role="outer"] way { 
+	color: #5AB741; width: 1; 
+}
 
 
 area[natural=grassland] { fill-color: #A7F275; }
@@ -551,25 +561,27 @@ area[landuse=reservoir],
 area[natural=water] { fill-color: #0000ff; }
 
 relation[type=multipolygon][amenity=swimming_pool] >[role="inner"] way,
-relation[type=multipolygon][amenity=swimming_pool] >[role="outer"] way { color: #0000ff; width: 1; }
+relation[type=multipolygon][amenity=swimming_pool] >[role="outer"] way,
 
 relation[type=multipolygon][landuse=aquaculture] >[role="inner"] way,
-relation[type=multipolygon][landuse=aquaculture] >[role="outer"] way { color: #0000ff; width: 1; }
+relation[type=multipolygon][landuse=aquaculture] >[role="outer"] way,
 
 relation[type=multipolygon][leisure=swimming_pool] >[role="inner"] way,
-relation[type=multipolygon][leisure=swimming_pool] >[role="outer"] way { color: #0000ff; width: 1; }
+relation[type=multipolygon][leisure=swimming_pool] >[role="outer"] way,
 
 relation[type=multipolygon][landuse=basin] >[role="inner"] way,
-relation[type=multipolygon][landuse=basin] >[role="outer"] way { color: #0000ff; width: 1; }
+relation[type=multipolygon][landuse=basin] >[role="outer"] way,
 
 relation[type=multipolygon][landuse=harbour] >[role="inner"] way,
-relation[type=multipolygon][landuse=harbour] >[role="outer"] way { color: #0000ff; width: 1; }
+relation[type=multipolygon][landuse=harbour] >[role="outer"] way,
 
 relation[type=multipolygon][landuse=reservoir] >[role="inner"] way,
-relation[type=multipolygon][landuse=reservoir] >[role="outer"] way { color: #0000ff; width: 1; }
+relation[type=multipolygon][landuse=reservoir] >[role="outer"] way,
 
 relation[type=multipolygon][natural=water] >[role="inner"] way,
-relation[type=multipolygon][natural=water] >[role="outer"] way { color: #0000ff; width: 1; }
+relation[type=multipolygon][natural=water] >[role="outer"] way { 
+	color: #0000ff; width: 1; 
+}
 
 
 area[landuse=quarry] { fill-color: #8C8C8C; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/quarry1.png"} 
@@ -583,16 +595,18 @@ area[natural=scree],
 area[landuse=railway] { fill-color: #8C8C8C; }
 
 relation[type=multipolygon][amenity=parking] >[role="inner"] way,
-relation[type=multipolygon][amenity=parking] >[role="outer"] way { color: #8C8C8C; width: 1; }
+relation[type=multipolygon][amenity=parking] >[role="outer"] way,
 
 relation[type=multipolygon][natural=bare_rock] >[role="inner"] way,
-relation[type=multipolygon][natural=bare_rock] >[role="outer"] way { color: #8C8C8C; width: 1; }
+relation[type=multipolygon][natural=bare_rock] >[role="outer"] way,
 
 relation[type=multipolygon][natural=scree] >[role="inner"] way,
-relation[type=multipolygon][natural=scree] >[role="outer"] way { color: #8C8C8C; width: 1; }
+relation[type=multipolygon][natural=scree] >[role="outer"] way,
 
 relation[type=multipolygon][landuse=railway] >[role="inner"] way,
-relation[type=multipolygon][landuse=railway] >[role="outer"] way { color: #8C8C8C; width: 1; }
+relation[type=multipolygon][landuse=railway] >[role="outer"] way { 
+	color: #8C8C8C; width: 1; 
+}
 
 
 area[amenity=prison] { fill-color: #505050; }
@@ -604,10 +618,12 @@ area[natural=cave_entrance],
 area[natural=glacier ] { fill-color: #AAAAAA; }
 
 relation[type=multipolygon][natural=cave_entrance] >[role="inner"] way,
-relation[type=multipolygon][natural=cave_entrance] >[role="outer"] way { color: #AAAAAA; width: 1; }
+relation[type=multipolygon][natural=cave_entrance] >[role="outer"] way,
 
 relation[type=multipolygon][natural=glacier] >[role="inner"] way,
-relation[type=multipolygon][natural=glacier] >[role="outer"] way { color: #AAAAAA; width: 1; }
+relation[type=multipolygon][natural=glacier] >[role="outer"] way { 
+	color: #AAAAAA; width: 1; 
+}
 
 
 area[landuse=garages] { fill-color: #CAAC6B;  }
@@ -625,13 +641,15 @@ area[leisure=park],
 area[leisure=nature_reserve] { fill-color: #8CD05F; }
 
 relation[type=multipolygon][leisure=pitch] >[role="inner"] way,
-relation[type=multipolygon][leisure=pitch] >[role="outer"] way { color: #8CD05F; width: 1; }
+relation[type=multipolygon][leisure=pitch] >[role="outer"] way,
 
 relation[type=multipolygon][leisure=park] >[role="inner"] way,
-relation[type=multipolygon][leisure=park] >[role="outer"] way { color: #8CD05F; width: 1; }
+relation[type=multipolygon][leisure=park] >[role="outer"] way,
 
 relation[type=multipolygon][leisure=nature_reserve] >[role="inner"] way,
-relation[type=multipolygon][leisure=nature_reserve] >[role="outer"] way { color: #8CD05F; width: 1; }
+relation[type=multipolygon][leisure=nature_reserve] >[role="outer"] way { 
+	color: #8CD05F; width: 1; 
+}
 
 area[landuse=scrub] { fill-color: #99ffaa; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/scrubnew1.png"}
 
@@ -656,22 +674,24 @@ area[amenity=college],
 area[amenity=university] { fill-color: #FFFF94; }
 
 relation[type=multipolygon][natural=sand] >[role="inner"] way,
-relation[type=multipolygon][natural=sand] >[role="outer"] way { color: #FFFF94; width: 1; }
+relation[type=multipolygon][natural=sand] >[role="outer"] way,
 
 relation[type=multipolygon][amenity=childcare] >[role="inner"] way,
-relation[type=multipolygon][amenity=childcare] >[role="outer"] way { color: #FFFF94; width: 1; }
+relation[type=multipolygon][amenity=childcare] >[role="outer"] way,
 
 relation[type=multipolygon][amenity=childcare] >[role="inner"] way,
-relation[type=multipolygon][amenity=childcare] >[role="outer"] way { color: #FFFF94; width: 1; }
+relation[type=multipolygon][amenity=childcare] >[role="outer"] way,
 
 relation[type=multipolygon][amenity=school] >[role="inner"] way,
-relation[type=multipolygon][amenity=school] >[role="outer"] way { color: #FFFF94; width: 1; }
+relation[type=multipolygon][amenity=school] >[role="outer"] way,
 
 relation[type=multipolygon][amenity=college] >[role="inner"] way,
-relation[type=multipolygon][amenity=college] >[role="outer"] way { color: #FFFF94; width: 1; }
+relation[type=multipolygon][amenity=college] >[role="outer"] way,
 
 relation[type=multipolygon][amenity=university] >[role="inner"] way,
-relation[type=multipolygon][amenity=university] >[role="outer"] way { color: #FFFF94; width: 1; }
+relation[type=multipolygon][amenity=university] >[role="outer"] way { 
+	color: #FFFF94; width: 1; 
+}
 
 
 area[amenity=hospital] { fill-color: #c9dfec; }
@@ -730,76 +750,78 @@ area[craft=upholsterer],
 area[craft=tiler] { fill-color: craft#999900; }
 
 relation[type=multipolygon][craft=carpenter] >[role="inner"] way,
-relation[type=multipolygon][craft=carpenter] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=carpenter] >[role="outer"] way,
 
 relation[type=multipolygon][craft=shoemaker] >[role="inner"] way,
-relation[type=multipolygon][craft=shoemaker] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=shoemaker] >[role="outer"] way,
 
 relation[type=multipolygon][craft=photographer] >[role="inner"] way,
-relation[type=multipolygon][craft=photographer] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=photographer] >[role="outer"] way,
 
 relation[type=multipolygon][craft=metal_construction] >[role="inner"] way,
-relation[type=multipolygon][craft=metal_construction] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=metal_construction] >[role="outer"] way,
 
 relation[type=multipolygon][craft=electrician] >[role="inner"] way,
-relation[type=multipolygon][craft=electrician] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=electrician] >[role="outer"] way,
 
 relation[type=multipolygon][craft=brewery] >[role="inner"] way,
-relation[type=multipolygon][craft=brewery] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=brewery] >[role="outer"] way,
 
 relation[type=multipolygon][craft=plumber] >[role="inner"] way,
-relation[type=multipolygon][craft=plumber] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=plumber] >[role="outer"] way,
 
 relation[type=multipolygon][craft=sawmill] >[role="inner"] way,
-relation[type=multipolygon][craft=sawmill] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=sawmill] >[role="outer"] way,
 
 relation[type=multipolygon][craft=gardener] >[role="inner"] way,
-relation[type=multipolygon][craft=gardener] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=gardener] >[role="outer"] way,
 
 relation[type=multipolygon][craft=winery] >[role="inner"] way,
-relation[type=multipolygon][craft=winery] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=winery] >[role="outer"] way,
 
 relation[type=multipolygon][craft=hvac] >[role="inner"] way,
-relation[type=multipolygon][craft=hvac] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=hvac] >[role="outer"] way,
 
 relation[type=multipolygon][craft=painter] >[role="inner"] way,
-relation[type=multipolygon][craft=painter] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=painter] >[role="outer"] way,
 
 relation[type=multipolygon][craft=stonemason] >[role="inner"] way,
-relation[type=multipolygon][craft=stonemason] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=stonemason] >[role="outer"] way,
 
 relation[type=multipolygon][craft=handicraft] >[role="inner"] way,
-relation[type=multipolygon][craft=handicraft] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=handicraft] >[role="outer"] way,
 
 relation[type=multipolygon][craft=pottery] >[role="inner"] way,
-relation[type=multipolygon][craft=pottery] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=pottery] >[role="outer"] way,
 
 relation[type=multipolygon][craft=key_cutter] >[role="inner"] way,
-relation[type=multipolygon][craft=key_cutter] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=key_cutter] >[role="outer"] way,
 
 relation[type=multipolygon][craft=caterer] >[role="inner"] way,
-relation[type=multipolygon][craft=caterer] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=caterer] >[role="outer"] way,
 
 relation[type=multipolygon][craft=roofer] >[role="inner"] way,
-relation[type=multipolygon][craft=roofer] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=roofer] >[role="outer"] way,
 
 relation[type=multipolygon][craft=beekeeper] >[role="inner"] way,
-relation[type=multipolygon][craft=beekeeper] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=beekeeper] >[role="outer"] way,
 
 relation[type=multipolygon][craft=blacksmith] >[role="inner"] way,
-relation[type=multipolygon][craft=blacksmith] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=blacksmith] >[role="outer"] way,
 
 relation[type=multipolygon][craft=locksmith] >[role="inner"] way,
-relation[type=multipolygon][craft=locksmith] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=locksmith] >[role="outer"] way,
 
 relation[type=multipolygon][craft=window_construction] >[role="inner"] way,
-relation[type=multipolygon][craft=window_construction] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=window_construction] >[role="outer"] way,
 
 relation[type=multipolygon][craft=upholsterer] >[role="inner"] way,
-relation[type=multipolygon][craft=upholsterer] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=upholsterer] >[role="outer"] way,
 
 relation[type=multipolygon][craft=tiler] >[role="inner"] way,
-relation[type=multipolygon][craft=tiler] >[role="outer"] way { color: #999900; width: 1; }
+relation[type=multipolygon][craft=tiler] >[role="outer"] way { 
+	color: #999900; width: 1; 
+}
 
 way[landuse=construction] { width: 2; color: #ffff00; dashes: 9,9; }
 
