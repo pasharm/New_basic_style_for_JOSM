@@ -387,7 +387,7 @@ relation[type=multipolygon][power=substation] >[role="inner"] way,
 relation[type=multipolygon][power=substation] >[role="outer"] way,
 
 relation[type=multipolygon][power=compensator] >[role="inner"] way,
-relation[type=multipolygon][power=compensator] >[role="outer"] way 
+relation[type=multipolygon][power=compensator] >[role="outer"] way,
 
 relation[type=multipolygon][power=converter] >[role="inner"] way,
 relation[type=multipolygon][power=converter] >[role="outer"] way, 
