@@ -3,7 +3,7 @@ meta
 {
     title: "New basic style";
     description: "Style is made in the likeness of the id editor from the web version of openstreetmap.org. Use together with the standard one.Comments and suggestions write to https://github.com/pasharm/New_basic_style_for_JOSM/issues";
-    version: "14_2018-04-08";
+    version: "14_2018-04-11";
     author: "Mokrynskyi Pavlo";
     link: "https://github.com/pasharm/New_basic_style_for_JOSM";
     watch-modified: true;
@@ -74,21 +74,20 @@ area[setting("partial_fill")]:closed2 {
 
 /*** Точки (Node) ***/
 
-node|z17- { symbol-shape: circle; symbol-size: 6; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
+node|z19- { symbol-shape: circle; symbol-size: 8; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
+node|z17-18 { symbol-shape: circle; symbol-size: 6; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
 node|z-16 { symbol-shape: circle; symbol-size: 0.001; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
 
 node:selected { symbol-shape: circle; symbol-size: 8; symbol-fill-color: node_selected#FF2F14; symbol-stroke-color: node_selected#ffffff; }
 
-node:connection { symbol-shape: circle; symbol-fill-color: #BBBBBB; symbol-stroke-color: #555555; }
-
 /* Точки на дорогах */
 
-way[highway]>node|z17- { symbol-shape: circle; symbol-size: 8; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
+way[highway]>node|z19- { symbol-shape: circle; symbol-size: 10; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
+way[highway]>node|z17-18 { symbol-shape: circle; symbol-size: 8; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
 way[highway]>node|z16-16 { symbol-shape: circle; symbol-size: 6; symbol-fill-color: #ffffff; symbol-stroke-color: #4A4A4A; }
 
 way[highway]>node|z17-:selected { object-z-index: 0; symbol-shape: circle; symbol-size: 10; symbol-fill-color: #FF2F14; symbol-stroke-color: #ffffff; }
 way[highway]>node|z-16:selected { object-z-index: 0; symbol-shape: circle; symbol-size: 8; symbol-fill-color: #FF2F14; symbol-stroke-color: #ffffff; }
-
 
 
 /*** Заливка ***/
@@ -1130,12 +1129,12 @@ way|z-16[landuse=construction] { width: 1; color: #ffff00; dashes: 9,9; }
 area|z17-[building],
 area|z17-[building=roof],
 area|z17-[building][!building?!][wall?!],
-area|z17-[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 1; fill-color: #E06E5F; fill-opacity: 0.3; }
+area|z17-[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 2; fill-color: #E06E5F; fill-opacity: 0.3; }
 
 area|z16[building],
 area|z16[building=roof],
 area|z16[building][!building?!][wall?!],
-area|z16[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 0.001; fill-color: #E06E5F; fill-opacity: 0.01; }
+area|z16[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 0.5; fill-color: #E06E5F; fill-opacity: 0.2; }
 
 area|z10-15[building],
 area|z10-15[building=roof],
