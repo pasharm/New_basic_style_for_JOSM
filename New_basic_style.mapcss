@@ -1,58 +1,55 @@
 
-meta 
-{
+meta {
     title: "New basic style";
     description: "Style is made in the likeness of the id editor from the web version of openstreetmap.org. Use together with the standard one.Comments and suggestions write to https://github.com/pasharm/New_basic_style_for_JOSM/issues";
-    version: "14_2018-04-11";
+    version: "15_2018-04-13";
     author: "Mokrynskyi Pavlo";
     link: "https://github.com/pasharm/New_basic_style_for_JOSM";
     watch-modified: true;
 }
 
-meta[lang=ru]
-{
+meta[lang=ru] {
     title: "Новый базовый стиль";
     description: "Cтиль сделан по подобию id рeдактора из веб версии openstreetmap.org. Использовать вместе со стандартным. Замечания и пожелания пишите на https://github.com/pasharm/New_basic_style_for_JOSM/issues";
     author: "Мокринский Павел";
 }
 
-meta[lang=uk]
-{
+meta[lang=uk] {
     title: "Новий базовий стиль";
     description: "Cтиль зроблений за зразком id рeдактора з веб версії openstreetmap.org. Використовувати разом зі стандартним. Зауваження та побажання пишіть на https://github.com/pasharm/New_basic_style_for_JOSM/issues";
     author: "Мокринський Павло";
 }
 
-meta[lang=de]
-{
+meta[lang=de] {
     title: "Neuer Grundstil";
     description: "Der Stil basiert auf der Beispiel-ID des Entwicklers aus der Web-Version von openstreetmap.org. Verwenden Sie zusammen mit dem Standard. Kommentare und Wünsche schreiben Sie bitte an https://github.com/pasharm/New_basic_style_for_JOSM/issues";
     author: "Mokrinski Pavel";
 }
 
-node, area { text-color: black; font-size: 12; text-halo-color: white;  text-halo-radius: 2; font-weight: bold; }
-
+node, area {
+    text-color: black;
+    font-size: 12;
+    text-halo-color: white;
+    text-halo-radius: 2;
+    font-weight: bold;
+}
 
 /*************************/
 /* create style settings */
 /*************************/
 
-
 setting::partial_fill {
-  type: boolean;
-  label: tr("Areas are drawn with fill only around their inner edges");
-  default: true;
+    type: boolean;
+    label: tr("Areas are drawn with fill only around their inner edges");
+    default: true;
 }
-
-
-
 
 /*************/
 /* Площадь заполнения - Area fill */
 /*************/
 
 /* small extent for unclosed area (see below for closed)
-небольшая площадь для незакрытой площади (см. ниже для закрытых)  */
+небольшая площадь для незакрытой площади (см. ниже для закрытых) */
 area[setting("partial_fill")] {
     fill-extent: 15;
 }
@@ -70,1079 +67,1530 @@ area[setting("partial_fill")]:closed2 {
     fill-extent-threshold: JOSM_pref("draw.area.extent_threshold", 0.9);
 }
 
-
-
 /*** Точки (Node) ***/
 
-node|z19- { symbol-shape: circle; symbol-size: 8; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
-node|z17-18 { symbol-shape: circle; symbol-size: 6; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
-node|z-16 { symbol-shape: circle; symbol-size: 0.001; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
+node|z19- {
+    symbol-shape: circle;
+    symbol-size: 8;
+    symbol-fill-color: node_selected#ffffff;
+    symbol-stroke-color: node_selected#4A4A4A;
+}
 
-node:selected { symbol-shape: circle; symbol-size: 8; symbol-fill-color: node_selected#FF2F14; symbol-stroke-color: node_selected#ffffff; }
+node|z17-18 {
+    symbol-shape: circle;
+    symbol-size: 6;
+    symbol-fill-color: node_selected#ffffff;
+    symbol-stroke-color: node_selected#4A4A4A;
+}
+
+node|z-16 {
+    symbol-shape: circle;
+    symbol-size: 0.001;
+    symbol-fill-color: node_selected#ffffff;
+    symbol-stroke-color: node_selected#4A4A4A;
+}
+
+node:selected {
+    symbol-shape: circle;
+    symbol-size: 8;
+    symbol-fill-color: node_selected#FF2F14;
+    symbol-stroke-color: node_selected#ffffff;
+}
 
 /* Точки на дорогах */
 
-way[highway]>node|z19- { symbol-shape: circle; symbol-size: 10; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
-way[highway]>node|z17-18 { symbol-shape: circle; symbol-size: 8; symbol-fill-color: node_selected#ffffff; symbol-stroke-color: node_selected#4A4A4A; }
-way[highway]>node|z16-16 { symbol-shape: circle; symbol-size: 6; symbol-fill-color: #ffffff; symbol-stroke-color: #4A4A4A; }
+way[highway] > node|z19- {
+    symbol-shape: circle;
+    symbol-size: 10;
+    symbol-fill-color: node_selected#ffffff;
+    symbol-stroke-color: node_selected#4A4A4A;
+}
 
-way[highway]>node|z17-:selected { object-z-index: 0; symbol-shape: circle; symbol-size: 10; symbol-fill-color: #FF2F14; symbol-stroke-color: #ffffff; }
-way[highway]>node|z-16:selected { object-z-index: 0; symbol-shape: circle; symbol-size: 8; symbol-fill-color: #FF2F14; symbol-stroke-color: #ffffff; }
+way[highway] > node|z17-18 {
+    symbol-shape: circle;
+    symbol-size: 8;
+    symbol-fill-color: node_selected#ffffff;
+    symbol-stroke-color: node_selected#4A4A4A;
+}
 
+way[highway] > node|z16-16 {
+    symbol-shape: circle;
+    symbol-size: 6;
+    symbol-fill-color: #ffffff;
+    symbol-stroke-color: #4A4A4A;
+}
+
+way[highway] > node|z17-:selected {
+    object-z-index: 0;
+    symbol-shape: circle;
+    symbol-size: 10;
+    symbol-fill-color: #FF2F14;
+    symbol-stroke-color: #ffffff;
+}
+
+way[highway] > node|z-16:selected {
+    object-z-index: 0;
+    symbol-shape: circle;
+    symbol-size: 8;
+    symbol-fill-color: #FF2F14;
+    symbol-stroke-color: #ffffff;
+}
 
 /*** Заливка ***/
 
-way|z17-[amenity],
-way|z17-[landuse],
-way|z17-[leisure],
-way|z17-[natural],
-way|z17-[building]
- { width: 2; }
+way|z17-[/amenity|landuse|leisure|natural|building/] {
+    width: 2;
+}
 
-way|z17-[amenity]::dashes,
-way|z17-[landuse]::dashes,
-way|z17-[leisure]::dashes,
-way|z17-[natural]::dashes,
-way|z17-[building]::dashes 
- { width: ;  dashes: 0; linecap: round; opacity: 0.6; }
+way|z17-[/amenity|landuse|leisure|natural|building/]::dashes {
+    width: ;
+    dashes: 0;
+    linecap: round;
+    opacity: 0.6;
+}
 
+way|z-16[/amenity|landuse|leisure|natural|building/] {
+    width: 1;
+}
 
-way|z-16[amenity],
-way|z-16[landuse],
-way|z-16[leisure],
-way|z-16[natural],
-way|z-16[building]
- { width: 1; }
+way|z-16[/amenity|landuse|leisure|natural|building/]::dashes {
+    width: ;
+    dashes: 0;
+    linecap: round;
+    opacity: 0.6;
+}
 
-way|z-16[amenity]::dashes,
-way|z-16[landuse]::dashes,
-way|z-16[leisure]::dashes,
-way|z-16[natural]::dashes,
-way|z-16[building]::dashes 
- { width: ;  dashes: 0; linecap: round; opacity: 0.6; }
-
-
-area { fill-opacity: 0.25; }
+area {
+    fill-opacity: 0.25;
+}
 
 /*** Дорожные объекты (Roads) - highway ***/
 
-way|z17-[highway=residential] { z-index: 6; color: #ffffff; width: 7; casing-color: #444444; casing-width: 1; }
-way|z-16[highway=residential] { z-index: 6; color: #ffffff; width: 4; casing-color: #444444; casing-width: 1; }
+way|z17-[highway=residential] {
+    z-index: 6;
+    color: #ffffff;
+    width: 7;
+    casing-color: #444444;
+    casing-width: 1;
+}
 
+way|z-16[highway=residential] {
+    z-index: 6;
+    color: #ffffff;
+    width: 4;
+    casing-color: #444444;
+    casing-width: 1;
+}
 
-way|z17-[highway=motorway],
-way|z17-[highway=motorway_link] { z-index: 6; color: #CF2081; width: 9; casing-color: #70372f; casing-width: 1; }
+way|z17-[highway=~/motorway|motorway_link/] {
+    z-index: 6;
+    color: #CF2081;
+    width: 9;
+    casing-color: #70372f;
+    casing-width: 1;
+}
+way|z-16[highway=~/motorway|motorway_link/] {
+    z-index: 6;
+    color: #CF2081;
+    width: 4;
+    casing-color: #70372f;
+    casing-width: 1;
+}
 
-way|z-16[highway=motorway],
-way|z-16[highway=motorway_link] { z-index: 6; color: #CF2081; width: 4; casing-color: #70372f; casing-width: 1; }
+way|z17-[highway=~/trunk|trunk_link/] {
+    z-index: 6;
+    color: #DD2F22;
+    width: 8;
+    casing-color: #70372f;
+    casing-width: 1;
+}
+way|z-16[highway=~/trunk|trunk_link/] {
+    z-index: 6;
+    color: #DD2F22;
+    width: 4;
+    casing-color: #70372f;
+    casing-width: 1;
+}
 
+way|z17-[highway=~/primary|primary_link/] {
+    z-index: 6;
+    color: #F99806;
+    width: 8;
+    casing-color: #70372f;
+    casing-width: 1;
+}
+way|z-16[highway=~/primary|primary_link/] {
+    z-index: 6;
+    color: #F99806;
+    width: 4;
+    casing-color: #70372f;
+    casing-width: 1;
+}
 
-way|z17-[highway=trunk],
-way|z17-[highway=trunk_link] { z-index: 6; color: #DD2F22; width: 8; casing-color: #70372f; casing-width: 1; }
+way|z17-[highway=~/secondary|secondary_link/] {
+    z-index: 6;
+    color: #F3F312;
+    width: 8;
+    casing-color: #70372f;
+    casing-width: 1;
+}
+way|z-16[highway=~/secondary|secondary_link/] {
+    z-index: 6;
+    color: #F3F312;
+    width: 4;
+    casing-color: #70372f;
+    casing-width: 1;
+}
 
-way|z-16[highway=trunk],
-way|z-16[highway=trunk_link] { z-index: 6; color: #DD2F22; width: 4; casing-color: #70372f; casing-width: 1; }
+way|z17-[highway=~/tertiary|tertiary_link/] {
+    z-index: 6;
+    color: #FFF9B3;
+    width: 8;
+    casing-color: #70372f;
+    casing-width: 1;
+}
+way|z-16[highway=~/tertiary|tertiary_link/] {
+    z-index: 6;
+    color: #FFF9B3;
+    width: 4;
+    casing-color: #70372f;
+    casing-width: 1;
+}
 
+way|z17-[highway=living_street] {
+    z-index: 6;
+    color: #bbbbbb;
+    width: 6;
+    casing-color: #dddddd;
+    casing-width: 1;
+}
 
-way|z17-[highway=primary],
-way|z17-[highway=primary_link] { z-index: 6; color: #F99806; width: 8; casing-color: #70372f; casing-width: 1; }
+way|z-16[highway=living_street] {
+    z-index: 6;
+    color: #bbbbbb;
+    width: 3;
+    casing-color: #dddddd;
+    casing-width: 1;
+}
 
-way|z-16[highway=primary],
-way|z-16[highway=primary_link] { z-index: 6; color: #F99806; width: 4; casing-color: #70372f; casing-width: 1; }
+way|z17-[highway=unclassified] {
+    z-index: 6;
+    color: #dcd9b9;
+    width: 7;
+    casing-color: #444444;
+    casing-width: 1;
+}
 
+way|z-16[highway=unclassified] {
+    z-index: 6;
+    color: #dcd9b9;
+    width: 3;
+    casing-color: #444444;
+    casing-width: 1;
+}
 
-way|z17-[highway=secondary],
-way|z17-[highway=secondary_link] { z-index: 6; color: #F3F312; width: 8; casing-color: #70372f; casing-width: 1; }
+way|z17-[highway=service] {
+    z-index: 6;
+    color: #ffffff;
+    width: 4;
+    casing-color: #666666;
+    casing-width: 1;
+}
 
-way|z-16[highway=secondary],
-way|z-16[highway=secondary_link] { z-index: 6; color: #F3F312; width: 4; casing-color: #70372f; casing-width: 1; }
+way|z-16[highway=service] {
+    z-index: 6;
+    color: #ffffff;
+    width: 2;
+    casing-color: #666666;
+    casing-width: 1;
+}
 
+way|z17-[highway=track] {
+    z-index: 6;
+    color: #C5B59F;
+    width: 5;
+    dashes: 4, 4;
+    linecap: round;
+}
 
-way|z17-[highway=tertiary],
-way|z17-[highway=tertiary_link] { z-index: 6; color: #FFF9B3; width: 8; casing-color: #70372f; casing-width: 1; }
+way|z17-[highway=track]::left {
+    z-index: 7;
+    color: #C9C2B9;
+    width: 1;
+    dashes: 4, 4;
+    offset: -3;
+    linecap: round;
+}
 
-way|z-16[highway=tertiary],
-way|z-16[highway=tertiary_link] { z-index: 6; color: #FFF9B3; width: 4; casing-color: #70372f; casing-width: 1; }
+way|z17-[highway=track]::right {
+    z-index: 7;
+    color: #C9C2B9;
+    width: 1;
+    dashes: 4, 4;
+    offset: 3;
+    linecap: round;
+}
 
+way|z-16[highway=track] {
+    z-index: 6;
+    color: #C5B59F;
+    width: 2;
+    dashes: 4, 4;
+    linecap: round;
+}
 
-way|z17-[highway=living_street] { z-index: 6; color: #bbbbbb; width: 6; casing-color: #dddddd; casing-width: 1; }
+way|z17-[highway=road] {
+    color: #9e9e9e;
+    width: 4;
+    casing-color: #666666;
+    casing-width: 1;
+}
 
-way|z-16[highway=living_street] { z-index: 6; color: #bbbbbb; width: 3; casing-color: #dddddd; casing-width: 1; }
-
-
-way|z17-[highway=unclassified] { z-index: 6; color: #dcd9b9; width: 7; casing-color: #444444; casing-width: 1; }
-way|z-16[highway=unclassified] { z-index: 6; color: #dcd9b9; width: 3; casing-color: #444444; casing-width: 1; }
-
-
-way|z17-[highway=service] { z-index: 6; color: #ffffff; width: 4; casing-color: #666666; casing-width: 1; }
-way|z-16[highway=service] { z-index: 6; color: #ffffff; width: 2; casing-color: #666666; casing-width: 1; }
-
-
-way|z17-[highway=track] { z-index: 6; color: #C5B59F;  width: 5;  dashes: 4, 4;  linecap: round; }
-way|z17-[highway=track]::left { z-index: 7;  color: #C9C2B9;  width: 1;  dashes: 4, 4;  offset: -3; linecap: round; }
-
-way|z17-[highway=track]::right { z-index: 7;  color: #C9C2B9;  width: 1;  dashes: 4, 4;  offset: 3; linecap: round; }
-way|z-16[highway=track] { z-index: 6; color: #C5B59F;  width: 2;  dashes: 4, 4;  linecap: round; }
-
-
-way|z17-[highway=road] { color: #9e9e9e; width: 4; casing-color: #666666; casing-width: 1; }
-way|z-16[highway=road] { color: #9e9e9e; width: 2; casing-color: #666666; casing-width: 1; }
-
-
+way|z-16[highway=road] {
+    color: #9e9e9e;
+    width: 2;
+    casing-color: #666666;
+    casing-width: 1;
+}
 
 /* Текст на дорогах */
 
-way|z17-[highway] { z-index: 5;  text: auto;  text-color: black;  font-size: 12;  text-position: line;  text-halo-color: white;  text-halo-radius: 2;  linecap: round;  casing-linecap: round }
+way|z17-[highway] {
+    z-index: 5;
+    text: auto;
+    text-color: black;
+    font-size: 12;
+    text-position: line;
+    text-halo-color: white;
+    text-halo-radius: 2;
+    linecap: round;
+    casing-linecap: round
+}
 
-way|z13-17[highway=primary] { z-index: 5;  text: auto;  text-color: black;  font-size: 12;  text-position: line;  text-halo-color: white;  text-halo-radius: 2;  linecap: round;  casing-linecap: round }
-
+way|z13-17[highway=primary] {
+    z-index: 5;
+    text: auto;
+    text-color: black;
+    font-size: 12;
+    text-position: line;
+    text-halo-color: white;
+    text-halo-radius: 2;
+    linecap: round;
+    casing-linecap: round
+}
 
 /*** Железнодорожные объекты - railway ***/
 
-way|z17-[railway=rail],
-way|z17-[railway=tram],
-way|z17-[railway=monorail] { z-index: 6; color: #555555;  width: 6;  dashes: 0, 0;  }
-way|z-16[railway=rail],
-way|z-16[railway=tram],
-way|z-16[railway=monorail] { z-index: 6; color: #555555;  width: 3;  dashes: 0, 0;  }
+way|z17-[railway=~/rail|tram|monorail/] {
+    z-index: 6;
+    color: #555555;
+    width: 6;
+    dashes: 0, 0;
+}
+way|z-16[railway=~/rail|tram|monorail/] {
+    z-index: 6;
+    color: #555555;
+    width: 3;
+    dashes: 0, 0;
+}
 
-way|z17-[railway=rail]::dashes,
-way|z17-[railway=tram]::dashes,
-way|z17-[railway=monorail]::dashes { z-index: 7;  color: #EEEEEE;  width: 2;  dashes: 12,12;  }
-way|z-16[railway=rail]::dashes,
-way|z-16[railway=tram]::dashes,
-way|z-16[railway=monorail]::dashes { z-index: 7;  color: #EEEEEE;  width: 2;  dashes: 12,12;  }
+way|z17-[railway=~/rail|tram|monorail/]::dashes {
+    z-index: 7;
+    color: #EEEEEE;
+    width: 2;
+    dashes: 12, 12;
+}
 
-way|z17-[railway=subway] { z-index: 6; color: #222222;  width: 6;  dashes: 0, 0;  }
-way|z-16[railway=subway] { z-index: 6; color: #222222;  width: 3;  dashes: 0, 0;  }
+way|z-16[railway=~/rail|tram|monorail/]::dashes {
+    z-index: 7;
+    color: #EEEEEE;
+    width: 2;
+    dashes: 12, 12;
+}
 
-way|z17-[railway=subway]::dashes { z-index: 7;  color: #BBBBBB;  width: 2;  dashes: 12,12;  }
-way|z-16[railway=subway]::dashes { z-index: 7;  color: #BBBBBB;  width: 1;  dashes: 12,12;  }
+way|z17-[railway=subway] {
+    z-index: 6;
+    color: #222222;
+    width: 6;
+    dashes: 0, 0;
+}
 
-way|z17-[railway=disused],
-way|z17-[railway=abandoned] { z-index: 6; color: #eeeeee;  width: 2;  dashes: 7, 3;  }
-way|z-16[railway=disused],
-way|z-16[railway=abandoned] { z-index: 6; color: #eeeeee;  width: 1;  dashes: 7, 3;  }
+way|z-16[railway=subway] {
+    z-index: 6;
+    color: #222222;
+    width: 3;
+    dashes: 0, 0;
+}
 
-way|z17-[railway=disused]::left,
-way|z17-[railway=abandoned]::left { z-index: 7;  color: #555555;  width: 2;  dashes: 7, 3;  offset: -2; }
-way|z-16[railway=disused]::left,
-way|z-16[railway=abandoned]::left { z-index: 7;  color: #555555;  width: 1;  dashes: 7, 3;  offset: -2; }
+way|z17-[railway=subway]::dashes {
+    z-index: 7;
+    color: #BBBBBB;
+    width: 2;
+    dashes: 12, 12;
+}
 
-way|z17-[railway=disused]::right,
-way|z17-[railway=abandoned]::right { z-index: 7;  color: #555555;  width: 2;  dashes: 7, 3;  offset: 2; }
-way|z-16[railway=disused]::right,
-way|z-16[railway=abandoned]::right { z-index: 7;  color: #555555;  width: 1;  dashes: 7, 3;  offset: 2; }
+way|z-16[railway=subway]::dashes {
+    z-index: 7;
+    color: #BBBBBB;
+    width: 1;
+    dashes: 12, 12;
+}
 
+way|z17-[railway=~/disused|abandoned/] {
+    z-index: 6;
+    color: #eeeeee;
+    width: 2;
+    dashes: 7, 3;
+}
+way|z-16[railway=~/disused|abandoned/] {
+    z-index: 6;
+    color: #eeeeee;
+    width: 1;
+    dashes: 7, 3;
+}
 
+way|z17-[railway=~/disused|abandoned/]::left {
+    z-index: 7;
+    color: #555555;
+    width: 2;
+    dashes: 7, 3;
+    offset: -2;
+}
+
+way|z-16[railway=~/disused|abandoned/]::left {
+    z-index: 7;
+    color: #555555;
+    width: 1;
+    dashes: 7, 3;
+    offset: -2;
+}
+
+way|z17-[railway=~/disused|abandoned/]::right {
+    z-index: 7;
+    color: #555555;
+    width: 2;
+    dashes: 7, 3;
+    offset: 2;
+}
+
+way|z-16[railway=~/disused|abandoned/]::right {
+    z-index: 7;
+    color: #555555;
+    width: 1;
+    dashes: 7, 3;
+    offset: 2;
+}
 
 /*** Пешеходные дорожки и тропы ***/
 
 way|z17-[crossing=zebra],
 way|z17-[footway=sidewal],
-way|z17-[highway=footway] { z-index: 6; color: #ffffff;  width: 5;  dashes: 0, 0;  }
+way|z17-[highway=footway] {
+    z-index: 6;
+    color: #ffffff;
+    width: 5;
+    dashes: 0, 0;
+}
+
 way|z-16[crossing=zebra],
 way|z-16[footway=sidewal],
-way|z-16[highway=footway] { z-index: 6; color: #ffffff;  width: 2;  dashes: 0, 0;  }
+way|z-16[highway=footway] {
+    z-index: 6;
+    color: #ffffff;
+    width: 2;
+    dashes: 0, 0;
+}
 
 way|z17-[crossing=zebra]::dashes,
 way|z17-[footway=sidewal]::dashes,
-way|z17-[highway=footway]::dashes { z-index: 7;  color: #AE8681;  width: 3;  dashes: 6,5;  }
+way|z17-[highway=footway]::dashes {
+    z-index: 7;
+    color: #AE8681;
+    width: 3;
+    dashes: 6, 5;
+}
+
 way|z-16[crossing=zebra]::dashes,
 way|z-16[footway=sidewal]::dashes,
-way|z-16[highway=footway]::dashes { z-index: 7;  color: #AE8681;  width: 2;  dashes: 6,5;  }
+way|z-16[highway=footway]::dashes {
+    z-index: 7;
+    color: #AE8681;
+    width: 2;
+    dashes: 6, 5;
+}
 
+way|z17-[highway=steps] {
+    z-index: 6;
+    color: #ffffff;
+    width: 5;
+    dashes: 0, 0;
+}
 
-way|z17-[highway=steps] { z-index: 6; color: #ffffff;  width: 5;  dashes: 0, 0;  }
-way|z-16[highway=steps] { z-index: 6; color: #ffffff;  width: 2;  dashes: 0, 0;  }
+way|z-16[highway=steps] {
+    z-index: 6;
+    color: #ffffff;
+    width: 2;
+    dashes: 0, 0;
+}
 
-way|z17-[highway=steps]::dashes { z-index: 7;  color: #81d25c;  width: 3;  dashes: 4,3;  }
-way|z-16[highway=steps]::dashes { z-index: 7;  color: #81d25c;  width: 2;  dashes: 4,3;  }
+way|z17-[highway=steps]::dashes {
+    z-index: 7;
+    color: #81d25c;
+    width: 3;
+    dashes: 4, 3;
+}
 
+way|z-16[highway=steps]::dashes {
+    z-index: 7;
+    color: #81d25c;
+    width: 2;
+    dashes: 4, 3;
+}
 
-way|z17-[highway=path] { z-index: 6; color: #c5b59f;  width: 5;  dashes: 0, 0;  }
-way|z-16[highway=path] { z-index: 6; color: #c5b59f;  width: 2;  dashes: 0, 0;  }
+way|z17-[highway=path] {
+    z-index: 6;
+    color: #c5b59f;
+    width: 5;
+    dashes: 0, 0;
+}
 
-way|z17-[highway=path]::dashes { z-index: 7;  color: #746f6f;  width: 3;  dashes: 6,5;  }
-way|z-16[highway=path]::dashes { z-index: 7;  color: #746f6f;  width: 2;  dashes: 6,5;  }
+way|z-16[highway=path] {
+    z-index: 6;
+    color: #c5b59f;
+    width: 2;
+    dashes: 0, 0;
+}
 
+way|z17-[highway=path]::dashes {
+    z-index: 7;
+    color: #746f6f;
+    width: 3;
+    dashes: 6, 5;
+}
 
-way|z17-[highway=cycleway] { z-index: 6; color: #ffffff;  width: 5;  dashes: 0, 0;  }
-way|z-16[highway=cycleway] { z-index: 6; color: #ffffff;  width: 2;  dashes: 0, 0;  }
+way|z-16[highway=path]::dashes {
+    z-index: 7;
+    color: #746f6f;
+    width: 2;
+    dashes: 6, 5;
+}
 
-way|z17-[highway=cycleway]::dashes { z-index: 7;  color: #58a9ed;  width: 3;  dashes: 6,5;  }
-way|z-16[highway=cycleway]::dashes { z-index: 7;  color: #58a9ed;  width: 2;  dashes: 6,5;  }
+way|z17-[highway=cycleway] {
+    z-index: 6;
+    color: #ffffff;
+    width: 5;
+    dashes: 0, 0;
+}
 
+way|z-16[highway=cycleway] {
+    z-index: 6;
+    color: #ffffff;
+    width: 2;
+    dashes: 0, 0;
+}
 
-way|z17-[highway=bridleway] { z-index: 6; color: #ffffff;  width: 5;  dashes: 0, 0;  }
-way|z-16[highway=bridleway] { z-index: 6; color: #ffffff;  width: 2;  dashes: 0, 0;  }
+way|z17-[highway=cycleway]::dashes {
+    z-index: 7;
+    color: #58a9ed;
+    width: 3;
+    dashes: 6, 5;
+}
 
-way|z17-[highway=bridleway]::dashes { z-index: 7;  color: #e06d5f;  width: 3;  dashes: 6,5;  }
-way|z-16[highway=bridleway]::dashes { z-index: 7;  color: #e06d5f;  width: 2;  dashes: 6,5;  }
+way|z-16[highway=cycleway]::dashes {
+    z-index: 7;
+    color: #58a9ed;
+    width: 2;
+    dashes: 6, 5;
+}
 
-way|z17-[highway=pedestrian] { z-index: 6; color: #8cd05f;  width: 5;  dashes: 0, 0;  }
-way|z-16[highway=pedestrian] { z-index: 6; color: #8cd05f;  width: 2;  dashes: 0, 0;  }
+way|z17-[highway=bridleway] {
+    z-index: 6;
+    color: #ffffff;
+    width: 5;
+    dashes: 0, 0;
+}
 
-way|z17-[highway=pedestrian]::dashes { z-index: 7;  color: #ffffff;  width: 3;  dashes: 4,6;  }
-way|z-16[highway=pedestrian]::dashes { z-index: 7;  color: #ffffff;  width: 2;  dashes: 4,6;  }
+way|z-16[highway=bridleway] {
+    z-index: 6;
+    color: #ffffff;
+    width: 2;
+    dashes: 0, 0;
+}
+
+way|z17-[highway=bridleway]::dashes {
+    z-index: 7;
+    color: #e06d5f;
+    width: 3;
+    dashes: 6, 5;
+}
+
+way|z-16[highway=bridleway]::dashes {
+    z-index: 7;
+    color: #e06d5f;
+    width: 2;
+    dashes: 6, 5;
+}
+
+way|z17-[highway=pedestrian] {
+    z-index: 6;
+    color: #8cd05f;
+    width: 5;
+    dashes: 0, 0;
+}
+
+way|z-16[highway=pedestrian] {
+    z-index: 6;
+    color: #8cd05f;
+    width: 2;
+    dashes: 0, 0;
+}
+
+way|z17-[highway=pedestrian]::dashes {
+    z-index: 7;
+    color: #ffffff;
+    width: 3;
+    dashes: 4, 6;
+}
+
+way|z-16[highway=pedestrian]::dashes {
+    z-index: 7;
+    color: #ffffff;
+    width: 2;
+    dashes: 4, 6;
+}
 
 /*** TODO: добавить highway=construction ***/
 
-/*** Водные объекты  ***/
+/*** Водные объекты ***/
 
-way|z17-[waterway=river] { color: #0000ff; width: 7; casing-color: #0000A7; casing-width: 1; }
-way|z-16[waterway=river] { color: #0000ff; width: 3; casing-color: #0000A7; casing-width: 1; }
+way|z17-[waterway=river] {
+    color: #0000ff;
+    width: 7;
+    casing-color: #0000A7;
+    casing-width: 1;
+}
 
-way|z17-[waterway=stream],
-way|z17-[waterway=canal],
-way|z17-[waterway=drain] { color: #0000ff; width: 4; casing-color: #0000A7; casing-width: 1; }
-way|z-16[waterway=stream],
-way|z-16[waterway=canal],
-way|z-16[waterway=drain] { color: #0000ff; width: 2; casing-color: #0000A7; casing-width: 1; }
+way|z-16[waterway=river] {
+    color: #0000ff;
+    width: 3;
+    casing-color: #0000A7;
+    casing-width: 1;
+}
 
-way|z17-[waterway=ditch] { color: #567BD6; width: 4; casing-color: #254B51; casing-width: 1; }
-way|z-16[waterway=ditch] { color: #567BD6; width: 2; casing-color: #254B51; casing-width: 1; }
+way|z17-[waterway=~/stream|canal|drain/] {
+    color: #0000ff;
+    width: 4;
+    casing-color: #0000A7;
+    casing-width: 1;
+}
+way|z-16[waterway=~/stream|canal|drain/] {
+    color: #0000ff;
+    width: 2;
+    casing-color: #0000A7;
+    casing-width: 1;
+}
 
+way|z17-[waterway=ditch] {
+    color: #567BD6;
+    width: 4;
+    casing-color: #254B51;
+    casing-width: 1;
+}
 
+way|z-16[waterway=ditch] {
+    color: #567BD6;
+    width: 2;
+    casing-color: #254B51;
+    casing-width: 1;
+}
 
 /*** Преграды - Barriers ***/
 
 /* Забор */
 
-area|z17-[barrier=fence] { color: #DDDDDD; width: 3; dashes: 15,6,1,6; linecap: square; }
-area|z-16[barrier=fence] { color: #DDDDDD; width: 1; dashes: 15,6,1,6; linecap: square; }
+area|z17-[barrier=fence] {
+    color: #DDDDDD;
+    width: 3;
+    dashes: 15, 6, 1, 6;
+    linecap: square;
+}
+
+area|z-16[barrier=fence] {
+    color: #DDDDDD;
+    width: 1;
+    dashes: 15, 6, 1, 6;
+    linecap: square;
+}
 
 /* Непрозрачная стена */
 
-area|z17-[barrier=wall] { color: #FFFFFF; width: 3; dashes: 15,6,1,6; linecap: round; opacity: 0.5; }
-area|z-16[barrier=wall] { color: #FFFFFF; width: 1; dashes: 15,6,1,6; linecap: round; opacity: 0.5; }
+area|z17-[barrier=wall] {
+    color: #FFFFFF;
+    width: 3;
+    dashes: 15, 6, 1, 6;
+    linecap: round;
+    opacity: 0.5;
+}
+
+area|z-16[barrier=wall] {
+    color: #FFFFFF;
+    width: 1;
+    dashes: 15, 6, 1, 6;
+    linecap: round;
+    opacity: 0.5;
+}
 
 /* Ров */
 
-way|z17-[barrier=ditch] { z-index: 6; color: #282828;  width:3;  dashes: 0, 0; linecap: square; }
-way|z17-[barrier=ditch]::dashes { z-index: 7;  color: #836D30;  width: 3;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
-way|z-16[barrier=ditch] { z-index: 6; color: #282828;  width:1;  dashes: 0, 0; linecap: square; }
-way|z-16[barrier=ditch]::dashes { z-index: 7;  color: #836D30;  width: 1;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
+way|z17-[barrier=ditch] {
+    z-index: 6;
+    color: #282828;
+    width: 3;
+    dashes: 0, 0;
+    linecap: square;
+}
+
+way|z17-[barrier=ditch]::dashes {
+    z-index: 7;
+    color: #836D30;
+    width: 3;
+    dashes: 16, 3, 4, 3;
+    dashes-background-opacity: 0.5;
+}
+
+way|z-16[barrier=ditch] {
+    z-index: 6;
+    color: #282828;
+    width: 1;
+    dashes: 0, 0;
+    linecap: square;
+}
+
+way|z-16[barrier=ditch]::dashes {
+    z-index: 7;
+    color: #836D30;
+    width: 1;
+    dashes: 16, 3, 4, 3;
+    dashes-background-opacity: 0.5;
+}
 
 /* Ворота / калитка */
 
-way|z17-[barrier=gate] { z-index: 6; color: #DDDDDD;  width:3;  dashes: 0, 0; linecap: square; }
-way|z17-[barrier=gate]::dashes { z-index: 7;  color: #00B422;  width: 3;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
-way|z-16[barrier=gate] { z-index: 6; color: #DDDDDD;  width:1;  dashes: 0, 0; linecap: square; }
-way|z-16[barrier=gate]::dashes { z-index: 7;  color: #00B422;  width: 1;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
+way|z17-[barrier=gate] {
+    z-index: 6;
+    color: #DDDDDD;
+    width: 3;
+    dashes: 0, 0;
+    linecap: square;
+}
+
+way|z17-[barrier=gate]::dashes {
+    z-index: 7;
+    color: #00B422;
+    width: 3;
+    dashes: 16, 3, 4, 3;
+    dashes-background-opacity: 0.5;
+}
+
+way|z-16[barrier=gate] {
+    z-index: 6;
+    color: #DDDDDD;
+    width: 1;
+    dashes: 0, 0;
+    linecap: square;
+}
+
+way|z-16[barrier=gate]::dashes {
+    z-index: 7;
+    color: #00B422;
+    width: 1;
+    dashes: 16, 3, 4, 3;
+    dashes-background-opacity: 0.5;
+}
 
 /* Живая изгородь */
 
-way|z17-[barrier=hedge] { z-index: 6; color: #282828;  width:3;  dashes: 0, 0; linecap: square;  }
-way|z17-[barrier=hedge]::dashes { z-index: 7;  color: #00B422;  width: 3;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
-way|z-16[barrier=hedge] { z-index: 6; color: #282828;  width:1;  dashes: 0, 0; linecap: square;  }
-way|z-16[barrier=hedge]::dashes { z-index: 7;  color: #00B422;  width: 1;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
+way|z17-[barrier=hedge] {
+    z-index: 6;
+    color: #282828;
+    width: 3;
+    dashes: 0, 0;
+    linecap: square;
+}
+
+way|z17-[barrier=hedge]::dashes {
+    z-index: 7;
+    color: #00B422;
+    width: 3;
+    dashes: 16, 3, 4, 3;
+    dashes-background-opacity: 0.5;
+}
+
+way|z-16[barrier=hedge] {
+    z-index: 6;
+    color: #282828;
+    width: 1;
+    dashes: 0, 0;
+    linecap: square;
+}
+
+way|z-16[barrier=hedge]::dashes {
+    z-index: 7;
+    color: #00B422;
+    width: 1;
+    dashes: 16, 3, 4, 3;
+    dashes-background-opacity: 0.5;
+}
 
 /* Преграда */
 
-way|z17-[barrier=yes] { z-index: 6; color: #ffffff;  width:3;  dashes: 0, 0; linecap: square; }
-way|z17-[barrier=yes]::dashes { z-index: 7;  color: #836D30;  width: 3;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
-way|z-16[barrier=yes] { z-index: 6; color: #ffffff;  width:1;  dashes: 0, 0; linecap: square; }
-way|z-16[barrier=yes]::dashes { z-index: 7;  color: #836D30;  width: 1;  dashes: 16,3,4,3; dashes-background-opacity: 0.5; }
+way|z17-[barrier=yes] {
+    z-index: 6;
+    color: #ffffff;
+    width: 3;
+    dashes: 0, 0;
+    linecap: square;
+}
 
+way|z17-[barrier=yes]::dashes {
+    z-index: 7;
+    color: #836D30;
+    width: 3;
+    dashes: 16, 3, 4, 3;
+    dashes-background-opacity: 0.5;
+}
 
+way|z-16[barrier=yes] {
+    z-index: 6;
+    color: #ffffff;
+    width: 1;
+    dashes: 0, 0;
+    linecap: square;
+}
+
+way|z-16[barrier=yes]::dashes {
+    z-index: 7;
+    color: #836D30;
+    width: 1;
+    dashes: 16, 3, 4, 3;
+    dashes-background-opacity: 0.5;
+}
 
 /*** Природные объекты ***/
 
-way|z17-[natural=coastline] {width: 2; color: water#0000ff; right-casing-color: water#0000ff; right-casing-width: 5; right-casing-opacity: 0.30; }
-way|z-16[natural=coastline] {width: 1; color: water#0000ff; right-casing-color: water#0000ff; right-casing-width: 2; right-casing-opacity: 0.30; }
+way|z17-[natural=coastline] {
+    width: 2;
+    color: water#0000ff;
+    right-casing-color: water#0000ff;
+    right-casing-width: 5;
+    right-casing-opacity: 0.30;
+}
 
-way|z17-[natural=tree_row] { width: 2; color: woodarea#008000; }
-way|z17-[natural=tree_row]::dashes { color: #025902;  width: 8;  dashes: 1,12; linecap: round; opacity: 0.6; }
-way|z-16[natural=tree_row] { width: 1; color: woodarea#008000; }
-way|z-16[natural=tree_row]::dashes { color: #025902;  width: 4;  dashes: 1,12; linecap: round; opacity: 0.6; }
+way|z-16[natural=coastline] {
+    width: 1;
+    color: water#0000ff;
+    right-casing-color: water#0000ff;
+    right-casing-width: 2;
+    right-casing-opacity: 0.30;
+}
 
+way|z17-[natural=tree_row] {
+    width: 2;
+    color: woodarea#008000;
+}
+
+way|z17-[natural=tree_row]::dashes {
+    color: #025902;
+    width: 8;
+    dashes: 1, 12;
+    linecap: round;
+    opacity: 0.6;
+}
+
+way|z-16[natural=tree_row] {
+    width: 1;
+    color: woodarea#008000;
+}
+
+way|z-16[natural=tree_row]::dashes {
+    color: #025902;
+    width: 4;
+    dashes: 1, 12;
+    linecap: round;
+    opacity: 0.6;
+}
 
 /*** Энергетика ***/
 
 /* Высоковольтная ЛЭП */
 
-way|z17-[power=line] {z-index: 5; color: darkgray; width: 3; dashes: 12,2; casing-color: black; casing-width: 2; casing-dashes: 4, 38; }
-way|z-16[power=line] {z-index: 5; color: darkgray; width: 1; dashes: 12,2; casing-color: black; casing-width: 1; casing-dashes: 4, 38; }
+way|z17-[power=line] {
+    z-index: 5;
+    color: darkgray;
+    width: 3;
+    dashes: 12, 2;
+    casing-color: black;
+    casing-width: 2;
+    casing-dashes: 4, 38;
+}
+
+way|z-16[power=line] {
+    z-index: 5;
+    color: darkgray;
+    width: 1;
+    dashes: 12, 2;
+    casing-color: black;
+    casing-width: 1;
+    casing-dashes: 4, 38;
+}
 
 /* Низковольтная ЛЭП */
 
-way|z17-[power=minor_line] {z-index: 5; color: gray; width: 2; dashes: 12,2; casing-color: white; casing-width: 2; casing-dashes: 4, 38;}
-way|z-16[power=minor_line] {z-index: 5; color: gray; width: 1; dashes: 12,2; casing-color: white; casing-width: 1; casing-dashes: 4, 38;}
+way|z17-[power=minor_line] {
+    z-index: 5;
+    color: gray;
+    width: 2;
+    dashes: 12, 2;
+    casing-color: white;
+    casing-width: 2;
+    casing-dashes: 4, 38;
+}
 
+way|z-16[power=minor_line] {
+    z-index: 5;
+    color: gray;
+    width: 1;
+    dashes: 12, 2;
+    casing-color: white;
+    casing-width: 1;
+    casing-dashes: 4, 38;
+}
 
-area[power=plant],
-area[power=substation],
-area[power=compensator],
-area[power=converter],
-area[power=generator] {
+area[power=~/plant|substation|compensator|converter|generator/] {
     fill-color: power#eeeeee;
 }
 
-relation[type=multipolygon][power=plant] >[role="inner"] way|z17-,
-relation[type=multipolygon][power=plant] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][power=substation] >[role="inner"] way|z17-,
-relation[type=multipolygon][power=substation] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][power=compensator] >[role="inner"] way|z17-,
-relation[type=multipolygon][power=compensator] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][power=converter] >[role="inner"] way|z17-,
-relation[type=multipolygon][power=converter] >[role="outer"] way|z17-, 
-
-relation[type=multipolygon][power=generator] >[role="inner"] way|z17-,
-relation[type=multipolygon][power=generator] >[role="outer"] way|z17- { 
-	color: #eeeeee; width: 2; 
+relation[type=multipolygon][power=~/plant|substation|compensator|converter|generator/] >[role=~/inner|outer/] way|z17- {
+    color: #eeeeee;
+    width: 2;
 }
 
-relation[type=multipolygon][power=plant] >[role="inner"] way|z-16,
-relation[type=multipolygon][power=plant] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][power=substation] >[role="inner"] way|z-16,
-relation[type=multipolygon][power=substation] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][power=compensator] >[role="inner"] way|z-16,
-relation[type=multipolygon][power=compensator] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][power=converter] >[role="inner"] way|z-16,
-relation[type=multipolygon][power=converter] >[role="outer"] way|z-16, 
-
-relation[type=multipolygon][power=generator] >[role="inner"] way|z-16,
-relation[type=multipolygon][power=generator] >[role="outer"] way|z-16 { 
-	color: #eeeeee; width: 1; 
+relation[type=multipolygon][power=~/plant|substation|compensator|converter|generator/] >[role=~/inner|outer/] way|z-16 {
+    color: #eeeeee;
+    width: 1;
 }
 
 /*** Объекты землепользования ***/
 
-area[landuse=residential],
-area[landuse=construction] { fill-color: #FFFF00; } 
-
-relation[type=multipolygon][landuse=residential] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=residential] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][landuse=construction] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=construction] >[role="outer"] way|z17- { 
-	color: #FFFF00; width: 2; 
+area[landuse=~/residential|construction/] {
+    fill-color: #FFFF00;
 }
 
-relation[type=multipolygon][landuse=residential] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=residential] >[role="outer"] way|z-16,
+relation[type=multipolygon][landuse=~/residential|construction/] >[role=~/inner|outer/] way|z17- {
+    color: #FFFF00;
+    width: 2;
+}
 
-relation[type=multipolygon][landuse=construction] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=construction] >[role="outer"] way|z-16 { 
-	color: #FFFF00; width: 1; 
+relation[type=multipolygon][landuse=~/residential|construction/] >[role=~/inner|outer/] way|z-16 {
+    color: #FFFF00;
+    width: 1;
 }
 
 /* area[landuse=industrial] { fill-color: #C4BD19; } */
 
 area[landuse=industrial],
-area[power=plant]{ fill-color: #E4A4F5; }
-
-relation[type=multipolygon][landuse=industrial] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=industrial] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][power=plant] >[role="inner"] way|z17-,
-relation[type=multipolygon][power=plant] >[role="outer"] way|z17- { 
-	color: #E4A4F5; width: 2; 
+area[power=plant] {
+    fill-color: #E4A4F5;
 }
 
-relation[type=multipolygon][landuse=industrial] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=industrial] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][power=plant] >[role="inner"] way|z17-,
-relation[type=multipolygon][power=plant] >[role="outer"] way|z17- { 
-	color: #E4A4F5; width: 1; 
+relation[type=multipolygon][landuse=industrial] >[role=~/inner|outer/] way|z17-,
+relation[type=multipolygon][power=plant] >[role=~/inner|outer/] way|z17- {
+    color: #E4A4F5;
+    width: 2;
 }
 
-
-area[landuse=commercial],
-area[landuse=retail],
-area[landuse=landfill] { fill-color: #F1881A; } 
-
-relation[type=multipolygon][landuse=commercial] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=commercial] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][landuse=retail] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=retail] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][landuse=landfill] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=landfill] >[role="outer"] way|z17- { 
-	color: #F1881A; width: 2; 
+relation[type=multipolygon][landuse=industrial] >[role=~/inner|outer/] way|z17-,
+relation[type=multipolygon][power=plant] >[role=~/inner|outer/] way|z17- {
+    color: #E4A4F5;
+    width: 1;
 }
 
-relation[type=multipolygon][landuse=commercial] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=commercial] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][landuse=retail] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=retail] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][landuse=landfill] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=landfill] >[role="outer"] way|z-16 { 
-	color: #F1881A; width: 1; 
+area[landuse=~/commercial|retail|landfill/] {
+    fill-color: #F1881A;
 }
 
+relation[type=multipolygon][landuse=~/commercial|retail|landfill/] >[role=~/inner|outer/] way|z17- {
+    color: #F1881A;
+    width: 2;
+}
 
-area[landuse=military] { fill-color: #FF4444; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/military1.png"}
+relation[type=multipolygon][landuse=~/commercial|retail|landfill/] >[role=~/inner|outer/] way|z-16 {
+    color: #F1881A;
+    width: 1;
+}
 
-relation[type=multipolygon][landuse=military] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=military] >[role="outer"] way|z17- { color: #FF4444; width: 2; }
+area[landuse=military] {
+    fill-color: #FF4444;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/military1.png";
+}
 
-relation[type=multipolygon][landuse=military] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=military] >[role="outer"] way|z17- { color: #FF4444; width: 1; }
+relation[type=multipolygon][landuse=military] >[role=~/inner|outer/] way|z17- {
+    color: #FF4444;
+    width: 2;
+}
 
+relation[type=multipolygon][landuse=military] >[role=~/inner|outer/] way|z17- {
+    color: #FF4444;
+    width: 1;
+}
 
-area[military] { fill-color: #FF4444; }
+area[military] {
+    fill-color: #FF4444;
+}
 
-relation[type=multipolygon][military] >[role="inner"] way|z17-,
-relation[type=multipolygon][military] >[role="outer"] way|z17- { color: #FF4444; width: 2; }
+relation[type=multipolygon][military] >[role=~/inner|outer/] way|z17- {
+    color: #FF4444;
+    width: 2;
+}
 
-relation[type=multipolygon][military] >[role="inner"] way|z-16,
-relation[type=multipolygon][military] >[role="outer"] way|z-16 { color: #FF4444; width: 1; }
+relation[type=multipolygon][military] >[role=~/inner|outer/] way|z-16 {
+    color: #FF4444;
+    width: 1;
+}
 
+area[landuse=vineyard] {
+    fill-color: #AEDFA3;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/vineyard1.png";
+}
 
-area[landuse=vineyard] { fill-color: #AEDFA3; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/vineyard1.png"}
+relation[type=multipolygon][landuse=vineyard] >[role=~/inner|outer/] way|z17- {
+    color: #AEDFA3;
+    width: 2;
+}
 
-relation[type=multipolygon][landuse=vineyard] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=vineyard] >[role="outer"] way|z17- { color: #AEDFA3; width: 2; }
+relation[type=multipolygon][landuse=vineyard] >[role=~/inner|outer/] way|z-16 {
+    color: #AEDFA3;
+    width: 1;
+}
 
-relation[type=multipolygon][landuse=vineyard] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=vineyard] >[role="outer"] way|z-16 { color: #AEDFA3; width: 1; }
+area[landuse=farmland] {
+    fill-color: #bfe83f;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/farmland1.png";
+}
 
+relation[type=multipolygon][landuse=farmland] >[role=~/inner|outer/] way|z17- {
+    color: #bfe83f;
+    width: 2;
+}
 
-area[landuse=farmland] { fill-color: #bfe83f; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/farmland1.png"}
+relation[type=multipolygon][landuse=farmland] >[role=~/inner|outer/] way|z-16 {
+    color: #bfe83f;
+    width: 1;
+}
 
-relation[type=multipolygon][landuse=farmland] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=farmland] >[role="outer"] way|z17- { color: #bfe83f; width: 2; }
+area[landuse=cemetery] {
+    fill-color: #BFE83F;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/cemetery1.png";
+}
 
-relation[type=multipolygon][landuse=farmland] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=farmland] >[role="outer"] way|z-16 { color: #bfe83f; width: 1; }
+relation[type=multipolygon][landuse=cemetery] >[role=~/inner|outer/] way|z17- {
+    color: #BFE83F;
+    width: 2;
+}
 
-area[landuse=cemetery] { fill-color: #BFE83F; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/cemetery1.png"}
+relation[type=multipolygon][landuse=cemetery] >[role=~/inner|outer/] way|z-16 {
+    color: #BFE83F;
+    width: 1;
+}
 
-relation[type=multipolygon][landuse=cemetery] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=cemetery] >[role="outer"] way|z17- { color: #BFE83F; width: 2; }
+area[amenity=grave_yard] {
+    fill-color: #BFE83F;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/grave_yard1.png";
+}
 
-relation[type=multipolygon][landuse=cemetery] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=cemetery] >[role="outer"] way|z-16 { color: #BFE83F; width: 1; }
+relation[type=multipolygon][amenity=grave_yard] >[role=~/inner|outer/] way|z17- {
+    color: #BFE83F;
+    width: 2;
+}
 
-area[amenity=grave_yard] { fill-color: #BFE83F; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/grave_yard1.png"}
+relation[type=multipolygon][amenity=grave_yard] >[role=~/inner|outer/] way|z-16 {
+    color: #BFE83F;
+    width: 1;
+}
 
-relation[type=multipolygon][amenity=grave_yard] >[role="inner"] way|z17-,
-relation[type=multipolygon][amenity=grave_yard] >[role="outer"] way|z17- { color: #BFE83F; width: 2; }
+area[landuse=meadow] {
+    fill-color: #99ffaa;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/meadownew1.png";
+}
 
-relation[type=multipolygon][amenity=grave_yard] >[role="inner"] way|z-16,
-relation[type=multipolygon][amenity=grave_yard] >[role="outer"] way|z-16 { color: #BFE83F; width: 1; }
+relation[type=multipolygon][landuse=meadow] >[role=~/inner|outer/] way|z17- {
+    color: #99ffaa;
+    width: 2;
+}
 
-area[landuse=meadow] { fill-color: #99ffaa; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/meadownew1.png"}
+relation[type=multipolygon][landuse=meadow] >[role=~/inner|outer/] way|z-16 {
+    color: #99ffaa;
+    width: 1;
+}
 
-relation[type=multipolygon][landuse=meadow] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=meadow] >[role="outer"] way|z17- { color: #99ffaa; width: 2; }
+area[landuse=orchard] {
+    fill-color: #BFE83F;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/orchard1.png";
+}
 
-relation[type=multipolygon][landuse=meadow] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=meadow] >[role="outer"] way|z-16 { color: #99ffaa; width: 1; }
+relation[type=multipolygon][landuse=orchard] >[role=~/inner|outer/] way|z17- {
+    color: #BFE83F;
+    width: 2;
+}
 
-area[landuse=orchard] { fill-color: #BFE83F; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/orchard1.png"}
+relation[type=multipolygon][landuse=orchard] >[role=~/inner|outer/] way|z-16 {
+    color: #BFE83F;
+    width: 1;
+}
 
-relation[type=multipolygon][landuse=orchard] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=orchard] >[role="outer"] way|z17- { color: #BFE83F; width: 2; }
+area[landuse=allotments] {
+    fill-color: #5ab741;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/allotments1.png";
+}
 
-relation[type=multipolygon][landuse=orchard] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=orchard] >[role="outer"] way|z-16 { color: #BFE83F; width: 1; }
+relation[type=multipolygon][landuse=allotments] >[role=~/inner|outer/] way|z17- {
+    color: #5ab741;
+    width: 2;
+}
 
-area[landuse=allotments] { fill-color: #5ab741; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/allotments1.png"}
+relation[type=multipolygon][landuse=allotments] >[role=~/inner|outer/] way|z-16 {
+    color: #5ab741;
+    width: 1;
+}
 
-relation[type=multipolygon][landuse=allotments] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=allotments] >[role="outer"] way|z17- { color: #5ab741; width: 2; }
+area[landuse=farm] {
+    fill-color: #BFE83F;
+}
 
-relation[type=multipolygon][landuse=allotments] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=allotments] >[role="outer"] way|z-16 { color: #5ab741; width: 1; }
+relation[type=multipolygon][landuse=farm] >[role=~/inner|outer/] way|z17- {
+    color: #BFE83F;
+    width: 2;
+}
 
-area[landuse=farm] { fill-color: #BFE83F; }
+relation[type=multipolygon][landuse=farm] >[role=~/inner|outer/] way|z-16 {
+    color: #BFE83F;
+    width: 1;
+}
 
-relation[type=multipolygon][landuse=farm] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=farm] >[role="outer"] way|z17- { color: #BFE83F; width: 2; }
+area[landuse=farmyard] {
+    fill-color: #F5DCBA;
+}
 
-relation[type=multipolygon][landuse=farm] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=farm] >[role="outer"] way|z-16 { color: #BFE83F; width: 1; }
+relation[type=multipolygon][landuse=farmyard] >[role=~/inner|outer/] way|z17- {
+    color: #F5DCBA;
+    width: 2;
+}
 
-area[landuse=farmyard] { fill-color: #F5DCBA; }
+relation[type=multipolygon][landuse=farmyard] >[role=~/inner|outer/] way|z-16 {
+    color: #F5DCBA;
+    width: 1;
+}
 
-relation[type=multipolygon][landuse=farmyard] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=farmyard] >[role="outer"] way|z17- { color: #F5DCBA; width: 2; }
+area[natural=wood] {
+    fill-color: #5AB741;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/wood1.png";
+}
 
-relation[type=multipolygon][landuse=farmyard] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=farmyard] >[role="outer"] way|z-16 { color: #F5DCBA; width: 1; }
+relation[type=multipolygon][natural=wood] >[role=~/inner|outer/] way|z17- {
+    color: #5AB741;
+    width: 2;
+}
 
-area[natural=wood] { fill-color: #5AB741; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/wood1.png"}
+relation[type=multipolygon][natural=wood] >[role=~/inner|outer/] way|z-16 {
+    color: #5AB741;
+    width: 1;
+}
 
-relation[type=multipolygon][natural=wood] >[role="inner"] way|z17-,
-relation[type=multipolygon][natural=wood] >[role="outer"] way|z17- { color: #5AB741; width: 2; }
+area[landuse=forest] {
+    fill-color: #5AB741;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/wood1.png";
+}
 
-relation[type=multipolygon][natural=wood] >[role="inner"] way|z-16,
-relation[type=multipolygon][natural=wood] >[role="outer"] way|z-16 { color: #5AB741; width: 1; }
+relation[type=multipolygon][landuse=forest] >[role=~/inner|outer/] way|z17- {
+    color: #5AB741;
+    width: 2;
+}
 
-area[landuse=forest] { fill-color: #5AB741; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/wood1.png"}
-
-relation[type=multipolygon][landuse=forest] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=forest] >[role="outer"] way|z17- { color: #5AB741; width: 2; }
-
-relation[type=multipolygon][landuse=forest] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=forest] >[role="outer"] way|z17- { color: #5AB741; width: 1; }
+relation[type=multipolygon][landuse=forest] >[role=~/inner|outer/] way|z17- {
+    color: #5AB741;
+    width: 1;
+}
 
 area[natural=grass],
-area[landuse=grass],
-area[landuse=park],
-area[landuse=landuse],
-area[landuse=natural],
-area[landuse=nature_reserve],
-area[leisure=garden] { fill-color: #5AB741; }
-
-relation[type=multipolygon][natural=grass] >[role="inner"] way|z17-,
-relation[type=multipolygon][natural=grass] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][landuse=grass] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=grass] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][landuse=park] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=park] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][landuse=landuse] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=landuse] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][landuse=natural] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=natural] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][landuse=nature_reserve] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=nature_reserve] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][leisure=garden] >[role="inner"] way|z17-,
-relation[type=multipolygon][leisure=garden] >[role="outer"] way|z17- { 
-	color: #5AB741; width: 2; 
+area[landuse=~/grass|park|landuse|natural|nature_reserve/],
+area[leisure=garden] {
+    fill-color: #5AB741;
 }
 
-relation[type=multipolygon][natural=grass] >[role="inner"] way|z-16,
-relation[type=multipolygon][natural=grass] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][landuse=grass] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=grass] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][landuse=park] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=park] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][landuse=landuse] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=landuse] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][landuse=natural] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=natural] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][landuse=nature_reserve] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=nature_reserve] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][leisure=garden] >[role="inner"] way|z-16,
-relation[type=multipolygon][leisure=garden] >[role="outer"] way|z-16 { 
-	color: #5AB741; width: 1; 
+relation[type=multipolygon][natural=grass] >[role=~/inner|outer/] way|z17-,
+relation[type=multipolygon][landuse=~/grass|park|landuse|natural|nature_reserve/] >[role=~/inner|outer/] way|z17-,
+relation[type=multipolygon][leisure=garden] >[role=~/inner|outer/] way|z17- {
+    color: #5AB741;
+    width: 2;
 }
 
+relation[type=multipolygon][natural=grass] >[role=~/inner|outer/] way|z-16,
+relation[type=multipolygon][landuse=~/grass|park|landuse|natural|nature_reserve/] >[role=~/inner|outer/] way|z-16,
+relation[type=multipolygon][leisure=garden] >[role=~/inner|outer/] way|z-16 {
+    color: #5AB741;
+    width: 1;
+}
 
-area[natural=grassland] { fill-color: #A7F275; }
+area[natural=grassland] {
+    fill-color: #A7F275;
+}
 
-relation[type=multipolygon][natural=grassland] >[role="inner"] way|z17-,
-relation[type=multipolygon][natural=grassland] >[role="outer"] way|z17- { color: #A7F275; width: 2; }
+relation[type=multipolygon][natural=grassland] >[role=~/inner|outer/] way|z17- {
+    color: #A7F275;
+    width: 2;
+}
 
-relation[type=multipolygon][natural=grassland] >[role="inner"] way|z-16,
-relation[type=multipolygon][natural=grassland] >[role="outer"] way|z-16 { color: #A7F275; width: 1; }
+relation[type=multipolygon][natural=grassland] >[role=~/inner|outer/] way|z-16 {
+    color: #A7F275;
+    width: 1;
+}
 
+area[natural=wetland] {
+    fill-color: #99ffaa;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/wetlandnew3.png";
+}
 
+relation[type=multipolygon][natural=wetland] >[role=~/inner|outer/] way|z17- {
+    color: #99ffaa;
+    width: 2;
+}
 
-area[natural=wetland] { fill-color: #99ffaa; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/wetlandnew3.png"}
-
-relation[type=multipolygon][natural=wetland] >[role="inner"] way|z17-,
-relation[type=multipolygon][natural=wetland] >[role="outer"] way|z17- { color: #99ffaa; width: 2; }
-
-relation[type=multipolygon][natural=wetland] >[role="inner"] way|z-16,
-relation[type=multipolygon][natural=wetland] >[role="outer"] way|z-16 { color: #99ffaa; width: 1; }
-
+relation[type=multipolygon][natural=wetland] >[role=~/inner|outer/] way|z-16 {
+    color: #99ffaa;
+    width: 1;
+}
 
 area[amenity=swimming_pool],
-area[landuse=aquaculture],
+area[landuse=~/aquaculture|basin|harbour|reservoir/],
 area[leisure=swimming_pool],
-area[landuse=basin],
-area[landuse=harbour],
-area[landuse=reservoir],
-area[natural=water] { fill-color: #0000ff; }
-
-relation[type=multipolygon][amenity=swimming_pool] >[role="inner"] way|z17-,
-relation[type=multipolygon][amenity=swimming_pool] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][landuse=aquaculture] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=aquaculture] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][leisure=swimming_pool] >[role="inner"] way|z17-,
-relation[type=multipolygon][leisure=swimming_pool] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][landuse=basin] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=basin] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][landuse=harbour] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=harbour] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][landuse=reservoir] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=reservoir] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][natural=water] >[role="inner"] way|z17-,
-relation[type=multipolygon][natural=water] >[role="outer"] way|z17- { 
-	color: #0000ff; width: 2; 
+area[natural=water] {
+    fill-color: #0000ff;
 }
 
-relation[type=multipolygon][amenity=swimming_pool] >[role="inner"] way|z-16,
-relation[type=multipolygon][amenity=swimming_pool] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][landuse=aquaculture] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=aquaculture] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][leisure=swimming_pool] >[role="inner"] way|z-16,
-relation[type=multipolygon][leisure=swimming_pool] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][landuse=basin] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=basin] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][landuse=harbour] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=harbour] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][landuse=reservoir] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=reservoir] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][natural=water] >[role="inner"] way|z-16,
-relation[type=multipolygon][natural=water] >[role="outer"] way|z-16 { 
-	color: #0000ff; width: 1; 
+relation[type=multipolygon][amenity=swimming_pool] >[role=~/inner|outer/] way|z17-,
+relation[type=multipolygon][landuse=~/aquaculture|basin|harbour|reservoir/] >[role=~/inner|outer/] way|z17-,
+relation[type=multipolygon][leisure=swimming_pool] >[role=~/inner|outer/] way|z17-,
+relation[type=multipolygon][natural=water] >[role=~/inner|outer/] way|z17- {
+    color: #0000ff;
+    width: 2;
 }
 
+relation[type=multipolygon][amenity=swimming_pool] >[role=~/inner|outer/] way|z-16,
+relation[type=multipolygon][landuse=~/aquaculture|basin|harbour|reservoir/] >[role=~/inner|outer/] way|z-16,
+relation[type=multipolygon][leisure=swimming_pool] >[role=~/inner|outer/] way|z-16,
+relation[type=multipolygon][natural=water] >[role=~/inner|outer/] way|z-16 {
+    color: #0000ff;
+    width: 1;
+}
 
-area[landuse=quarry] { fill-color: #8C8C8C; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/quarry1.png"} 
+area[landuse=quarry] {
+    fill-color: #8C8C8C;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/quarry1.png";
+}
 
-relation[type=multipolygon][landuse=quarry] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=quarry] >[role="outer"] way|z17- { color: #8C8C8C; width: 2; }
+relation[type=multipolygon][landuse=quarry] >[role=~/inner|outer/] way|z17- {
+    color: #8C8C8C;
+    width: 2;
+}
 
-relation[type=multipolygon][landuse=quarry] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=quarry] >[role="outer"] way|z-16 { color: #8C8C8C; width: 1; }
+relation[type=multipolygon][landuse=quarry] >[role=~/inner|outer/] way|z-16 {
+    color: #8C8C8C;
+    width: 1;
+}
 
 area[amenity=parking],
-area[natural=bare_rock],
-area[natural=scree],
-area[landuse=railway] { fill-color: #8C8C8C; }
-
-relation[type=multipolygon][amenity=parking] >[role="inner"] way|z17-,
-relation[type=multipolygon][amenity=parking] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][natural=bare_rock] >[role="inner"] way|z17-,
-relation[type=multipolygon][natural=bare_rock] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][natural=scree] >[role="inner"] way|z17-,
-relation[type=multipolygon][natural=scree] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][landuse=railway] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=railway] >[role="outer"] way|z17- { 
-	color: #8C8C8C; width: 2; 
+area[natural=~/bare_rock|scree/],
+area[landuse=railway] {
+    fill-color: #8C8C8C;
 }
 
-relation[type=multipolygon][amenity=parking] >[role="inner"] way|z-16,
-relation[type=multipolygon][amenity=parking] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][natural=bare_rock] >[role="inner"] way|z-16,
-relation[type=multipolygon][natural=bare_rock] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][natural=scree] >[role="inner"] way|z-16,
-relation[type=multipolygon][natural=scree] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][landuse=railway] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=railway] >[role="outer"] way|z-16 { 
-	color: #8C8C8C; width: 1; 
+relation[type=multipolygon][amenity=parking] >[role=~/inner|outer/] way|z17-,
+relation[type=multipolygon][natural=~/bare_rock|scree/] >[role=~/inner|outer/] way|z17-,
+relation[type=multipolygon][landuse=railway] >[role=~/inner|outer/] way|z17- {
+    color: #8C8C8C;
+    width: 2;
 }
 
-
-area[amenity=prison] { fill-color: #505050; }
-
-relation[type=multipolygon][amenity=prison] >[role="inner"] way|z17-,
-relation[type=multipolygon][amenity=prison] >[role="outer"] way|z17- { color: #505050; width: 2; }
-
-relation[type=multipolygon][amenity=prison] >[role="inner"] way|z-16,
-relation[type=multipolygon][amenity=prison] >[role="outer"] way|z-16 { color: #505050; width: 1; }
-
-area[natural=cave_entrance],
-area[natural=glacier ] { fill-color: #AAAAAA; }
-
-relation[type=multipolygon][natural=cave_entrance] >[role="inner"] way|z17-,
-relation[type=multipolygon][natural=cave_entrance] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][natural=glacier] >[role="inner"] way|z17-,
-relation[type=multipolygon][natural=glacier] >[role="outer"] way|z17- { 
-	color: #AAAAAA; width: 2; 
+relation[type=multipolygon][amenity=parking] >[role=~/inner|outer/] way|z-16,
+relation[type=multipolygon][natural=~/bare_rock|scree/] >[role=~/inner|outer/] way|z-16,
+relation[type=multipolygon][landuse=railway] >[role=~/inner|outer/] way|z-16 {
+    color: #8C8C8C;
+    width: 1;
 }
 
-relation[type=multipolygon][natural=cave_entrance] >[role="inner"] way|z-16,
-relation[type=multipolygon][natural=cave_entrance] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][natural=glacier] >[role="inner"] way|z-16,
-relation[type=multipolygon][natural=glacier] >[role="outer"] way|z-16 { 
-	color: #AAAAAA; width: 1; 
+area[amenity=prison] {
+    fill-color: #505050;
 }
 
-
-area[landuse=garages] { fill-color: #CAAC6B;  }
-
-relation[type=multipolygon][landuse=garages] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=garages] >[role="outer"] way|z17- { color: #CAAC6B; width: 2; }
-
-relation[type=multipolygon][landuse=garages] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=garages] >[role="outer"] way|z-16 { color: #CAAC6B; width: 1; }
-
-area[landuse=religious] { fill-color: #D532FE; }
-
-relation[type=multipolygon][landuse=religious] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=religious] >[role="outer"] way|z17- { color: #D532FE; width: 2; }
-
-relation[type=multipolygon][landuse=religious] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=religious] >[role="outer"] way|z-16 { color: #D532FE; width: 1; }
-
-area[leisure=pitch],
-area[leisure=park],
-area[leisure=nature_reserve] { fill-color: #8CD05F; }
-
-relation[type=multipolygon][leisure=pitch] >[role="inner"] way|z17-,
-relation[type=multipolygon][leisure=pitch] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][leisure=park] >[role="inner"] way|z17-,
-relation[type=multipolygon][leisure=park] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][leisure=nature_reserve] >[role="inner"] way|z17-,
-relation[type=multipolygon][leisure=nature_reserve] >[role="outer"] way|z17- { 
-	color: #8CD05F; width: 2; 
+relation[type=multipolygon][amenity=prison] >[role=~/inner|outer/] way|z17- {
+    color: #505050;
+    width: 2;
 }
 
-relation[type=multipolygon][leisure=pitch] >[role="inner"] way|z-16,
-relation[type=multipolygon][leisure=pitch] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][leisure=park] >[role="inner"] way|z-16,
-relation[type=multipolygon][leisure=park] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][leisure=nature_reserve] >[role="inner"] way|z-16,
-relation[type=multipolygon][leisure=nature_reserve] >[role="outer"] way|z-16 { 
-	color: #8CD05F; width: 1; 
+relation[type=multipolygon][amenity=prison] >[role=~/inner|outer/] way|z-16 {
+    color: #505050;
+    width: 1;
 }
 
-area[landuse=scrub] { fill-color: #99ffaa; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/scrubnew1.png"}
+area[natural=~/cave_entrance|glacier/] {
+    fill-color: #AAAAAA;
+}
 
-relation[type=multipolygon][landuse=scrub] >[role="inner"] way|z17-,
-relation[type=multipolygon][landuse=scrub] >[role="outer"] way|z17- { color: #99ffaa; width: 2; }
+relation[type=multipolygon][natural=~/cave_entrance|glacier/] >[role=~/inner|outer/] way|z17- {
+    color: #AAAAAA;
+    width: 2;
+}
 
-relation[type=multipolygon][landuse=scrub] >[role="inner"] way|z-16,
-relation[type=multipolygon][landuse=scrub] >[role="outer"] way|z-16 { color: #99ffaa; width: 1; }
+relation[type=multipolygon][natural=~/cave_entrance|glacier/] >[role=~/inner|outer/] way|z-16 {
+    color: #AAAAAA;
+    width: 1;
+}
 
-area[natural=scrub] { fill-color: #5AB741; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/scrubnew1.png"}
+area[landuse=garages] {
+    fill-color: #CAAC6B;
+}
 
-relation[type=multipolygon][natural=scrub] >[role="inner"] way|z17-,
-relation[type=multipolygon][natural=scrub] >[role="outer"] way|z17- { color: #5AB741; width: 2; }
+relation[type=multipolygon][landuse=garages] >[role=~/inner|outer/] way|z17- {
+    color: #CAAC6B;
+    width: 2;
+}
 
-relation[type=multipolygon][natural=scrub] >[role="inner"] way|z-16,
-relation[type=multipolygon][natural=scrub] >[role="outer"] way|z-16 { color: #5AB741; width: 1; }
+relation[type=multipolygon][landuse=garages] >[role=~/inner|outer/] way|z-16 {
+    color: #CAAC6B;
+    width: 1;
+}
 
-area[natural=beach] { fill-color: #FFFF94; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/beach1.png"}
+area[landuse=religious] {
+    fill-color: #D532FE;
+}
 
-relation[type=multipolygon][natural=beach] >[role="inner"] way|z17-,
-relation[type=multipolygon][natural=beach] >[role="outer"] way|z17- { color: #FFFF94; width: 2; }
+relation[type=multipolygon][landuse=religious] >[role=~/inner|outer/] way|z17- {
+    color: #D532FE;
+    width: 2;
+}
 
-relation[type=multipolygon][natural=beach] >[role="inner"] way|z-16,
-relation[type=multipolygon][natural=beach] >[role="outer"] way|z-16 { color: #FFFF94; width: 1; }
+relation[type=multipolygon][landuse=religious] >[role=~/inner|outer/] way|z-16 {
+    color: #D532FE;
+    width: 1;
+}
+
+area[leisure=~/pitch|park|nature_reserve/] {
+    fill-color: #8CD05F;
+}
+
+relation[type=multipolygon][leisure=~/pitch|park|nature_reserve/] >[role=~/inner|outer/] way|z17- {
+    color: #8CD05F;
+    width: 2;
+}
+
+relation[type=multipolygon][leisure=~/pitch|park|nature_reserve/] >[role=~/inner|outer/] way|z-16 {
+    color: #8CD05F;
+    width: 1;
+}
+
+area[landuse=scrub] {
+    fill-color: #99ffaa;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/scrubnew1.png";
+}
+
+relation[type=multipolygon][landuse=scrub] >[role=~/inner|outer/] way|z17- {
+    color: #99ffaa;
+    width: 2;
+}
+
+relation[type=multipolygon][landuse=scrub] >[role=~/inner|outer/] way|z-16 {
+    color: #99ffaa;
+    width: 1;
+}
+
+area[natural=scrub] {
+    fill-color: #5AB741;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/scrubnew1.png";
+}
+
+relation[type=multipolygon][natural=scrub] >[role=~/inner|outer/] way|z17- {
+    color: #5AB741;
+    width: 2;
+}
+
+relation[type=multipolygon][natural=scrub] >[role=~/inner|outer/] way|z-16 {
+    color: #5AB741;
+    width: 1;
+}
+
+area[natural=beach] {
+    fill-color: #FFFF94;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/beach1.png";
+}
+
+relation[type=multipolygon][natural=beach] >[role=~/inner|outer/] way|z17- {
+    color: #FFFF94;
+    width: 2;
+}
+
+relation[type=multipolygon][natural=beach] >[role=~/inner|outer/] way|z-16 {
+    color: #FFFF94;
+    width: 1;
+}
 
 area[natural=sand],
-area[amenity=childcare],
-area[amenity=childcare],
-area[amenity=school],
-area[amenity=college],
-area[amenity=university] { fill-color: #FFFF94; }
-
-relation[type=multipolygon][natural=sand] >[role="inner"] way|z17-,
-relation[type=multipolygon][natural=sand] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][amenity=childcare] >[role="inner"] way|z17-,
-relation[type=multipolygon][amenity=childcare] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][amenity=childcare] >[role="inner"] way|z17-,
-relation[type=multipolygon][amenity=childcare] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][amenity=school] >[role="inner"] way|z17-,
-relation[type=multipolygon][amenity=school] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][amenity=college] >[role="inner"] way|z17-,
-relation[type=multipolygon][amenity=college] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][amenity=university] >[role="inner"] way|z17-,
-relation[type=multipolygon][amenity=university] >[role="outer"] way|z17- { 
-	color: #FFFF94; width: 2; 
+area[amenity=~/childcare|school|college/],
+area[amenity=university] {
+    fill-color: #FFFF94;
 }
 
-relation[type=multipolygon][natural=sand] >[role="inner"] way|z-16,
-relation[type=multipolygon][natural=sand] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][amenity=childcare] >[role="inner"] way|z-16,
-relation[type=multipolygon][amenity=childcare] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][amenity=childcare] >[role="inner"] way|z-16,
-relation[type=multipolygon][amenity=childcare] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][amenity=school] >[role="inner"] way|z-16,
-relation[type=multipolygon][amenity=school] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][amenity=college] >[role="inner"] way|z-16,
-relation[type=multipolygon][amenity=college] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][amenity=university] >[role="inner"] way|z-16,
-relation[type=multipolygon][amenity=university] >[role="outer"] way|z-16 { 
-	color: #FFFF94; width: 1; 
+relation[type=multipolygon][natural=sand] >[role=~/inner|outer/] way|z17-,
+relation[type=multipolygon][amenity=~/childcare|school|college/] >[role=~/inner|outer/] way|z17-,
+relation[type=multipolygon][amenity=university] >[role=~/inner|outer/] way|z17- {
+    color: #FFFF94;
+    width: 2;
 }
 
-
-area[amenity=hospital] { fill-color: #c9dfec; }
-
-relation[type=multipolygon][amenity=hospital] >[role="inner"] way|z17-,
-relation[type=multipolygon][amenity=hospital] >[role="outer"] way|z17- { color: #c9dfec; width: 2; }
-
-relation[type=multipolygon][amenity=hospital] >[role="inner"] way|z-16,
-relation[type=multipolygon][amenity=hospital] >[role="outer"] way|z-16 { color: #c9dfec; width: 1; }
-
-
-area[leisure=stadium] { fill-color: #8beba3; }
-
-relation[type=multipolygon][leisure=stadium] >[role="inner"] way|z17-,
-relation[type=multipolygon][leisure=stadium] >[role="outer"] way|z17- { color: #8beba3; width: 2; }
-
-relation[type=multipolygon][leisure=stadium] >[role="inner"] way|z-16,
-relation[type=multipolygon][leisure=stadium] >[role="outer"] way|z-16 { color: #8beba3; width: 1; }
-
-
-area[leisure=track] { fill-color: #7ae3ab; }
-
-relation[type=multipolygon][leisure=track] >[role="inner"] way|z17-,
-relation[type=multipolygon][leisure=track] >[role="outer"] way|z17- { color: #7ae3ab; width: 2; }
-
-relation[type=multipolygon][leisure=track] >[role="inner"] way|z-16,
-relation[type=multipolygon][leisure=track] >[role="outer"] way|z-16 { color: #7ae3ab; width: 1; }
-
-
-area[leisure=playground] { fill-color: #b3efcd; }
-
-relation[type=multipolygon][leisure=playground] >[role="inner"] way|z17-,
-relation[type=multipolygon][leisure=playground] >[role="outer"] way|z17- { color: #b3efcd; width: 2; }
-
-relation[type=multipolygon][leisure=playground] >[role="inner"] way|z-16,
-relation[type=multipolygon][leisure=playground] >[role="outer"] way|z-16 { color: #b3efcd; width: 1; }
-
-
-area[highway-=pedestrian][area=yes] { fill-color: #ededed; }
-
-relation[type=multipolygon][highway-=pedestrian][area=yes] >[role="inner"] way|z17-,
-relation[type=multipolygon][highway-=pedestrian][area=yes] >[role="outer"] way|z17- { color: #ededed; width: 2; }
-
-relation[type=multipolygon][highway=pedestrian][area=yes] >[role="inner"] way|z-16,
-relation[type=multipolygon][highway=pedestrian][area=yes] >[role="outer"] way|z-16 { color: #ededed; width: 1; }
-
-
-area[craft=carpenter],
-area[craft=shoemaker],
-area[craft=photographer],
-area[craft=metal_construction],
-area[craft=electrician],
-area[craft=brewery],
-area[craft=plumber],
-area[craft=sawmill],
-area[craft=gardener],
-area[craft=winery],
-area[craft=hvac],
-area[craft=painter],
-area[craft=stonemason],
-area[craft=handicraft],
-area[craft=pottery],
-area[craft=key_cutter],
-area[craft=caterer],
-area[craft=roofer],
-area[craft=beekeeper],
-area[craft=blacksmith],
-area[craft=locksmith],
-area[craft=window_construction],
-area[craft=upholsterer],
-area[craft=tiler] { fill-color: craft#999900; }
-
-relation[type=multipolygon][craft=carpenter] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=carpenter] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=shoemaker] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=shoemaker] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=photographer] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=photographer] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=metal_construction] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=metal_construction] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=electrician] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=electrician] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=brewery] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=brewery] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=plumber] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=plumber] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=sawmill] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=sawmill] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=gardener] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=gardener] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=winery] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=winery] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=hvac] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=hvac] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=painter] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=painter] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=stonemason] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=stonemason] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=handicraft] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=handicraft] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=pottery] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=pottery] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=key_cutter] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=key_cutter] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=caterer] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=caterer] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=roofer] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=roofer] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=beekeeper] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=beekeeper] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=blacksmith] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=blacksmith] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=locksmith] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=locksmith] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=window_construction] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=window_construction] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=upholsterer] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=upholsterer] >[role="outer"] way|z17-,
-
-relation[type=multipolygon][craft=tiler] >[role="inner"] way|z17-,
-relation[type=multipolygon][craft=tiler] >[role="outer"] way|z17- { 
-	color: #999900; width: 2; 
+relation[type=multipolygon][natural=sand] >[role=~/inner|outer/] way|z-16,
+relation[type=multipolygon][amenity=~/childcare|school|college/] >[role=~/inner|outer/] way|z-16,
+relation[type=multipolygon][amenity=university] >[role=~/inner|outer/] way|z-16 {
+    color: #FFFF94;
+    width: 1;
 }
 
-relation[type=multipolygon][craft=carpenter] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=carpenter] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=shoemaker] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=shoemaker] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=photographer] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=photographer] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=metal_construction] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=metal_construction] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=electrician] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=electrician] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=brewery] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=brewery] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=plumber] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=plumber] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=sawmill] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=sawmill] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=gardener] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=gardener] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=winery] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=winery] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=hvac] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=hvac] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=painter] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=painter] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=stonemason] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=stonemason] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=handicraft] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=handicraft] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=pottery] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=pottery] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=key_cutter] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=key_cutter] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=caterer] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=caterer] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=roofer] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=roofer] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=beekeeper] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=beekeeper] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=blacksmith] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=blacksmith] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=locksmith] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=locksmith] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=window_construction] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=window_construction] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=upholsterer] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=upholsterer] >[role="outer"] way|z-16,
-
-relation[type=multipolygon][craft=tiler] >[role="inner"] way|z-16,
-relation[type=multipolygon][craft=tiler] >[role="outer"] way|z-16 { 
-	color: #999900; width: 1; 
+area[amenity=hospital] {
+    fill-color: #c9dfec;
 }
 
-way|z17-[landuse=construction] { width: 2; color: #ffff00; dashes: 9,9; }
-way|z-16[landuse=construction] { width: 1; color: #ffff00; dashes: 9,9; }
+relation[type=multipolygon][amenity=hospital] >[role=~/inner|outer/] way|z17- {
+    color: #c9dfec;
+    width: 2;
+}
 
+relation[type=multipolygon][amenity=hospital] >[role=~/inner|outer/] way|z-16 {
+    color: #c9dfec;
+    width: 1;
+}
 
+area[leisure=stadium] {
+    fill-color: #8beba3;
+}
+
+relation[type=multipolygon][leisure=stadium] >[role=~/inner|outer/] way|z17- {
+    color: #8beba3;
+    width: 2;
+}
+
+relation[type=multipolygon][leisure=stadium] >[role=~/inner|outer/] way|z-16 {
+    color: #8beba3;
+    width: 1;
+}
+
+area[leisure=track] {
+    fill-color: #7ae3ab;
+}
+
+relation[type=multipolygon][leisure=track] >[role=~/inner|outer/] way|z17- {
+    color: #7ae3ab;
+    width: 2;
+}
+
+relation[type=multipolygon][leisure=track] >[role=~/inner|outer/] way|z-16 {
+    color: #7ae3ab;
+    width: 1;
+}
+
+area[leisure=playground] {
+    fill-color: #b3efcd;
+}
+
+relation[type=multipolygon][leisure=playground] >[role=~/inner|outer/] way|z17- {
+    color: #b3efcd;
+    width: 2;
+}
+
+relation[type=multipolygon][leisure=playground] >[role=~/inner|outer/] way|z-16 {
+    color: #b3efcd;
+    width: 1;
+}
+
+area[highway-=pedestrian][area=yes] {
+    fill-color: #ededed;
+}
+
+relation[type=multipolygon][highway-=pedestrian][area=yes] >[role=~/inner|outer/] way|z17- {
+    color: #ededed;
+    width: 2;
+}
+
+relation[type=multipolygon][highway=pedestrian][area=yes] >[role=~/inner|outer/] way|z-16 {
+    color: #ededed;
+    width: 1;
+}
+
+area[craft=~/carpenter|shoemaker|photographer|metal_construction|electrician|brewery|plumber|sawmill|gardener|winery|hvac|painter|stonemason|handicraft|pottery|key_cutter|caterer|roofer|beekeeper|blacksmith|locksmith|window_construction|upholsterer|tiler/] {
+    fill-color: craft#999900;
+}
+
+relation[type=multipolygon][craft=~/carpenter|shoemaker|photographer|metal_construction|electrician|brewery|plumber|sawmill|gardener|winery|hvac|painter|stonemason|handicraft|pottery|key_cutter|caterer|roofer|beekeeper|blacksmith|locksmith|window_construction|upholsterer|tiler/] >[role=~/inner|outer/] way|z17- {
+    color: #999900;
+    width: 2;
+}
+
+relation[type=multipolygon][craft=~/carpenter|shoemaker|photographer|metal_construction|electrician|brewery|plumber|sawmill|gardener|winery|hvac|painter|stonemason|handicraft|pottery|key_cutter|caterer|roofer|beekeeper|blacksmith|locksmith|window_construction|upholsterer|tiler/] >[role=~/inner|outer/] way|z-16 {
+    color: #999900;
+    width: 1;
+}
+
+way|z17-[landuse=construction] {
+    width: 2;
+    color: #ffff00;
+    dashes: 9, 9;
+}
+
+way|z-16[landuse=construction] {
+    width: 1;
+    color: #ffff00;
+    dashes: 9, 9;
+}
 
 area|z17-[building],
 area|z17-[building=roof],
 area|z17-[building][!building?!][wall?!],
-area|z17-[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 2; fill-color: #E06E5F; fill-opacity: 0.3; }
+area|z17-[building:part][!building:part?!] {
+    z-index: 5;
+    color: #E06E5F;
+    width: 2;
+    fill-color: #E06E5F;
+    fill-opacity: 0.3;
+}
 
 area|z16[building],
 area|z16[building=roof],
 area|z16[building][!building?!][wall?!],
-area|z16[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 0.5; fill-color: #E06E5F; fill-opacity: 0.2; }
+area|z16[building:part][!building:part?!] {
+    z-index: 5;
+    color: #E06E5F;
+    width: 0.5;
+    fill-color: #E06E5F;
+    fill-opacity: 0.2;
+}
 
 area|z10-15[building],
 area|z10-15[building=roof],
 area|z10-15[building][!building?!][wall?!],
-area|z10-15[building:part][!building:part?!] { z-index: 5; color: #E06E5F; width: 0.001; fill-color: #; fill-opacity: 0.01; }
-
-
-
+area|z10-15[building:part][!building:part?!] {
+    z-index: 5;
+    color: #E06E5F;
+    width: 0.001;
+    fill-color: #;
+    fill-opacity: 0.01;
+}
 
 /*** Иконка внутри области ***/
 
@@ -1154,64 +1602,79 @@ area[amenity=parking] {
 
 /*** Типы лисьтев ***/
 
+area[leaf_type=mixed] {
+    fill-color: #5AB741;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-mixed1.png";
+}
 
-area[leaf_type=mixed] { fill-color: #5AB741; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-mixed1.png"}
+relation[type=multipolygon][leaf_type=mixed] >[role=~/inner|outer/] way|z17- {
+    color: #5AB741;
+    width: 2;
+}
 
-relation[type=multipolygon][leaf_type=mixed] >[role="inner"] way|z17-,
-relation[type=multipolygon][leaf_type=mixed] >[role="outer"] way|z17- { color: #5AB741; width: 2; }
+relation[type=multipolygon][leaf_type=mixed] >[role=~/inner|outer/] way|z-16 {
+    color: #5AB741;
+    width: 1;
+}
 
-relation[type=multipolygon][leaf_type=mixed] >[role="inner"] way|z-16,
-relation[type=multipolygon][leaf_type=mixed] >[role="outer"] way|z-16 { color: #5AB741; width: 1; }
+area[leaf_type=broadleaved] {
+    fill-color: #5AB741;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-broadleaved1.png";
+}
 
-area[leaf_type=broadleaved] { fill-color: #5AB741; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-broadleaved1.png"}
+relation[type=multipolygon][leaf_type=broadleaved] >[role=~/inner|outer/] way|z17- {
+    color: #5AB741;
+    width: 2;
+}
 
-relation[type=multipolygon][leaf_type=broadleaved] >[role="inner"] way|z17-,
-relation[type=multipolygon][leaf_type=broadleaved] >[role="outer"] way|z17- { color: #5AB741; width: 2; }
+relation[type=multipolygon][leaf_type=broadleaved] >[role=~/inner|outer/] way|z-16 {
+    color: #5AB741;
+    width: 1;
+}
 
-relation[type=multipolygon][leaf_type=broadleaved] >[role="inner"] way|z-16,
-relation[type=multipolygon][leaf_type=broadleaved] >[role="outer"] way|z-16 { color: #5AB741; width: 1; }
+area[leaf_type=needleleaved] {
+    fill-color: #5AB741;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-needleleaved1.png";
+}
 
-area[leaf_type=needleleaved] { fill-color: #5AB741; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-needleleaved1.png"}
+relation[type=multipolygon][leaf_type=needleleaved] >[role=~/inner|outer/] way|z17- {
+    color: #5AB741;
+    width: 2;
+}
 
-relation[type=multipolygon][leaf_type=needleleaved] >[role="inner"] way|z17-,
-relation[type=multipolygon][leaf_type=needleleaved] >[role="outer"] way|z17- { color: #5AB741; width: 2; }
+relation[type=multipolygon][leaf_type=needleleaved] >[role=~/inner|outer/] way|z-16 {
+    color: #5AB741;
+    width: 1;
+}
 
-relation[type=multipolygon][leaf_type=needleleaved] >[role="inner"] way|z-16,
-relation[type=multipolygon][leaf_type=needleleaved] >[role="outer"] way|z-16 { color: #5AB741; width: 1; }
+area[leaf_type=leafless] {
+    fill-color: #5AB741;
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-leafless1.png";
+}
 
-area[leaf_type=leafless] { fill-color: #5AB741; fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-leafless1.png"}
+relation[type=multipolygon][leaf_type=leafless] >[role=~/inner|outer/] way|z17- {
+    color: #5AB741;
+    width: 2;
+}
 
-relation[type=multipolygon][leaf_type=leafless] >[role="inner"] way|z17-,
-relation[type=multipolygon][leaf_type=leafless] >[role="outer"] way|z17- { color: #5AB741; width: 2; }
+relation[type=multipolygon][leaf_type=leafless] >[role=~/inner|outer/] way|z-16 {
+    color: #5AB741;
+    width: 1;
+}
 
-relation[type=multipolygon][leaf_type=leafless] >[role="inner"] way|z-16,
-relation[type=multipolygon][leaf_type=leafless] >[role="outer"] way|z-16 { color: #5AB741; width: 1; }
+way[barrier=~/retaining_wall|kerb/],
+way[natural=cliff] {
+    repeat-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/cliff_pattern.png";
+    repeat-image-align: top;
+    width: 2;
+    color: #b2b2b2;
+}
 
- 
+/* Сооружения */
 
-
-
-
-way[natural=cliff] { repeat-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/cliff_pattern.svg"; repeat-image-align: top; width: 2; color: #b2b2b2; }
-way[barrier=retaining_wall],
-way[barrier=kerb] { repeat-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/cliff_pattern.svg"; repeat-image-align: top; width: 2; color: #b2b2b2; }
-
-
-
-/* Сооружения  */
-
-
-way[bridge=yes]::core_bridge,
-way[bridge=viaduct]::core_bridge,
-way[bridge=swing]::core_bridge,
-way[bridge=movable]::core_bridge,
-way[bridge=cantilever]::core_bridge,
-way[bridge=covered]::core_bridge,
-way[bridge=low_water_crossing]::core_bridge,
-way[bridge=trestle]::core_bridge,
-way[bridge=aqueduct]::core_bridge,
+way[bridge=~/yes|viaduct|swing|movable|cantilever|covered|low_water_crossing|trestle|aqueduct/]::core_bridge,
 way[bridge] {
-	z-index: 4;
+    z-index: 4;
     major-z-index: 2;
     object-z-index: -1;
     width: +6;
@@ -1219,175 +1682,198 @@ way[bridge] {
     opacity: 0.6;
 }
 
-way[bridge=yes]::bridge1, way[bridge=viaduct]::bridge1, way[bridge=suspension]::bridge1 { z-index: 4; color: #; width: 0; }
-way[bridge=yes]::bridge2, way[bridge=viaduct]::bridge2, way[bridge=suspension]::bridge2 { z-index: 3; color: #; width: 0; }
+way[bridge=~/yes|viaduct|suspension/]::bridge1 {
+    z-index: 4;
+    color: #;
+    width: 0;
+}
+
+way[bridge=~/yes|viaduct|suspension/]::bridge2 {
+    z-index: 3;
+    color: #;
+    width: 0;
+}
 
 way[crossing][bridge=yes],
 way[footway][bridge=yes],
-way[highway=footway][bridge=yes] { z-index: 6; color: #;  width: 5;  dashes: 0, 0;  }
+way[highway=footway][bridge=yes] {
+    z-index: 6;
+    color: #;
+    width: 5;
+    dashes: 0, 0;
+}
 
+way[tunnel=~/yes|culvert|building_passage|avalanche_protector/]::core_tunnel,
+way[tunnel] {
+    z-index: 4;
+    major-z-index: 2;
+    object-z-index: -1;
+    width: +0;
+    color: #;
+    opacity: 0.3
+}
 
-way[tunnel=yes]::core_tunnel,
-way[tunnel=culvert]::core_tunnel,
-way[tunnel=building_passage]::core_tunnel,
-way[tunnel=avalanche_protector]::core_tunnel,
-way[tunnel] { z-index: 4; major-z-index: 2; object-z-index: -1; width: +0; color: #;  opacity: 0.3 }
+way[tunnel=yes][!waterway]::bridge1 {
+    z-index: 4;
+    color: ;
+    width: 0;
+}
 
+way[tunnel=yes][!waterway]::bridge2 {
+    z-index: 3;
+    color: ;
+    width: 0;
+}
 
-way[tunnel=yes][!waterway]::bridge1 { z-index: 4; color: ; width: 0; }
-way[tunnel=yes][!waterway]::bridge2 { z-index: 3; color: ; width: 0; }
+way[tunnel=~/yes|culvert|building_passage|avalanche_protector/],
+way[tunnel] {
+    opacity: 0.5
+}
 
+way[/embankment|cutting/] {
+    repeat-image: none;
+}
 
-way[tunnel=yes],
-way[tunnel=culvert],
-way[tunnel=building_passage],
-way[tunnel=avalanche_protector],
-way[tunnel] {  opacity: 0.5 }
-
-way[embankment],
-way[cutting] { repeat-image: none; }
-way[embankment]::dashes,
-way[cutting]::dashes { z-index: 7;  color: #000000; opacity: 0.5;  width: +16;  dashes: 2,4; }
-
+way[/embankment|cutting/]::dashes {
+    z-index: 7;
+    color: #000000;
+    opacity: 0.5;
+    width: +16;
+    dashes: 2, 4;
+}
 
 way[ford=stepping_stones]::core_ford,
 way[ford?]::core_ford {
     z-index: 7;
     width: 2;
     color: water#0000ff;
-    dashes: 9,9;
+    dashes: 9, 9;
     dashes-offset: 9;
 }
 
-
 /* Route relations */
 
-relation[type=route] > way::route { z-index: -1; width: ; color: ; opacity: 0.3; linecap: none; }
-relation[type=route][route=bicycle][network=ncn] > way::route { z-index: -1; width: ; color: ; opacity: 0.3; linecap: none; }
-relation[type=route][route=bicycle][network=rcn] > way::route { z-index: -1; width: ; color: ; opacity: 0.3; linecap: none; }
-relation[type=route][route=bicycle][network=lcn] > way::route { z-index: -1; width: ; color: ; opacity: 0.3; linecap: none; }
-relation[type=route][route=mtb] > way::route { z-index: -1; width: ; color: ; opacity: 0.3; linecap: none; }
-relation[type=route][route=foot] > way::route { z-index: -1; width: 10; color: #80ff80; opacity: 0.6; linecap: none; }
+relation[type=route] > way::route {
+    z-index: -1;
+    width: ;
+    color: ;
+    opacity: 0.3;
+    linecap: none;
+}
 
+relation[type=route][route=bicycle][network=~/ncn|rcn|lcn/] > way::route {
+    z-index: -1;
+    width: ;
+    color: ;
+    opacity: 0.3;
+    linecap: none;
+}
 
+relation[type=route][route=mtb] > way::route {
+    z-index: -1;
+    width: ;
+    color: ;
+    opacity: 0.3;
+    linecap: none;
+}
+
+relation[type=route][route=foot] > way::route {
+    z-index: -1;
+    width: 10;
+    color: #80ff80;
+    opacity: 0.6;
+    linecap: none;
+}
 
 /*** Границы ***/
 
-relation[admin_level=9] > way::core_boundary,
-relation[admin_level=9] way,
-relation[admin_level=10] > way::core_boundary,
-relation[admin_level=10] way {
+relation[admin_level=~/9|10/] > way::core_boundary,
+relation[admin_level=~/9|10/]way {
     z-index: 3;
     width: 4;
     color: #63A3FF;
-	dashes: 0;
+    dashes: 0;
 }
 
-relation[admin_level=9] way::dashes,
-relation[admin_level=10] way::dashes {
+relation[admin_level=~/9|10/]way::dashes {
     z-index: 4;
     width: 1;
     color: #eeeeee;
-    dashes: 6,6,20,6;
+    dashes: 6, 6, 20, 6;
 }
 
-relation[admin_level=7] > way::core_boundary,
-relation[admin_level=7] way,
-relation[admin_level=8] > way::core_boundary,
-relation[admin_level=8] way,
-way[boundary=administrative],
-way[boundary=postal_code],
-way[boundary=political],
-way[boundary=maritime] {
+relation[admin_level=~/7|8/] > way::core_boundary,
+relation[admin_level=~/7|8/]way,
+way[boundary=~/administrative|postal_code|political|maritime/] {
     z-index: 3;
     width: 6;
     color: #63A3FF;
-	dashes: 0;
+    dashes: 0;
 }
 
-
-relation[admin_level=7] way::dashes,
-relation[admin_level=8] way::dashes,
-way[boundary=administrative]::dashes,
-way[boundary=postal_code]::dashes,
-way[boundary=political]::dashes,
-way[boundary=maritime]::dashes {
+relation[admin_level=~/7|8/]way::dashes,
+way[boundary=~/administrative|postal_code|political|maritime/]::dashes {
     z-index: 4;
     width: 2;
     color: #eeeeee;
-    dashes: 6,6,20,6;
+    dashes: 6, 6, 20, 6;
 }
 
-
-
-relation[admin_level=5] > way::core_boundary,
-relation[admin_level=5] way,
-relation[admin_level=6] > way::core_boundary,
-relation[admin_level=6] way {
+relation[admin_level=~/5|6/] > way::core_boundary,
+relation[admin_level=~/5|6/]way {
     z-index: 3;
     width: 8;
     color: #63A3FF;
-	dashes: 0;
+    dashes: 0;
 }
 
-relation[admin_level=5] way::dashes,
-relation[admin_level=6] way::dashes {
+relation[admin_level=~/5|6/]way::dashes {
     z-index: 4;
     width: 3;
     color: #eeeeee;
-    dashes: 6,6,20,6;
+    dashes: 6, 6, 20, 6;
 }
 
-
-relation[admin_level=3] > way::core_boundary,
-relation[admin_level=3] way,
-relation[admin_level=4] > way::core_boundary,
-relation[admin_level=4] way {
+relation[admin_level=~/3|4/] > way::core_boundary,
+relation[admin_level=~/3|4/]way {
     z-index: 3;
     width: 10;
     color: #63A3FF;
-	dashes: 0;
+    dashes: 0;
 }
 
-relation[admin_level=3] way::dashes,
-relation[admin_level=4] way::dashes {
+relation[admin_level=~/3|4/]way::dashes {
     z-index: 4;
     width: 4;
     color: #eeeeee;
-    dashes: 6,6,20,6;
+    dashes: 6, 6, 20, 6;
 }
 
-
-relation[admin_level=1] > way::core_boundary,
-relation[admin_level=1] way,
-relation[admin_level=2] > way::core_boundary,
-relation[admin_level=2] way {
+relation[admin_level=~/1|2/] > way::core_boundary,
+relation[admin_level=~/1|2/]way {
     z-index: 3;
     width: 10;
     color: #63A3FF;
-	dashes: 0;
+    dashes: 0;
 }
 
-relation[admin_level=1] way::dashes,
-relation[admin_level=2] way::dashes {
+relation[admin_level=~/1|2/]way::dashes {
     z-index: 4;
     width: 4;
     color: #eeeeee;
     dashes: 0;
 }
 
-way[boundary=protected_area],
-way[boundary=national_park] {
+way[boundary=~/protected_area|national_park/] {
     z-index: 3;
     width: 6;
     color: #9CC08B;
-	dashes: 0;
+    dashes: 0;
 }
 
-way[boundary=protected_area]::dashes,
-way[boundary=national_park]::dashes {
+way[boundary=~/protected_area|national_park/]::dashes {
     z-index: 4;
     width: 2;
     color: #eeeeee;
-    dashes: 6,6,20,6;
+    dashes: 6, 6, 20, 6;
 }
