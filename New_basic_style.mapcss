@@ -1664,7 +1664,7 @@ relation[type=multipolygon][leaf_type=leafless] >[role=~/inner|outer/] way|z-16 
 
 way[barrier=~/retaining_wall|kerb/],
 way[natural=cliff] {
-    repeat-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/cliff_pattern.png";
+    repeat-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/cliff_pattern.svg";
     repeat-image-align: top;
     width: 2;
     color: #b2b2b2;
