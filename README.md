@@ -5,6 +5,8 @@ Style for JOSM is made in the likeness of the id editor from the web version of 
 # How to Install
 To install it, you need in the program settings (F12) to go to the Third tab (Parameters of map projection and data display) - Map rendering styles - Choose "New basic Style").
 
+Recommended to use together with the standard style.
+
 # Preview
 | Standart JOSM | New basic style    |
 | :-----------: |:------------------:| 
