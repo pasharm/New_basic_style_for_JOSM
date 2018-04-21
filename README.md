@@ -5,3 +5,7 @@ Style for JOSM is made in the likeness of the id editor from the web version of 
 Cтиль сделан по подобию id рeдактора из веб версии openstreetmap.org для JOSM.
 
 Cтиль зроблений за подобою id рeдактора з веб версії openstreetmap.org для JOSM.
+
+| Standart JOSM | New basic style    |
+| :-----------: |:------------------:| 
+| [1](https://pasharm.github.io/New_basic_style_for_JOSM/preview/1.jpg)     | [2](https://pasharm.github.io/New_basic_style_for_JOSM/preview/2.jpg)|
