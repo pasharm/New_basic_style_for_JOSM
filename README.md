@@ -8,4 +8,4 @@ Cтиль зроблений за подобою id рeдактора з веб 
 
 | Standart JOSM | New basic style    |
 | :-----------: |:------------------:| 
-| [1](https://pasharm.github.io/New_basic_style_for_JOSM/preview/1.jpg)     | [2](https://pasharm.github.io/New_basic_style_for_JOSM/preview/2.jpg)|
+| ![1](https://pasharm.github.io/New_basic_style_for_JOSM/preview/1.jpg)     | ![2](https://pasharm.github.io/New_basic_style_for_JOSM/preview/2.jpg)|
