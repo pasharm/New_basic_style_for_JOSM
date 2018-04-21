@@ -2,10 +2,10 @@
 
 Style for JOSM is made in the likeness of the id editor from the web version of openstreetmap.org
 
-Cтиль сделан по подобию id рeдактора из веб версии openstreetmap.org для JOSM.
+# How to Install
+To install it, you need in the program settings (F12) to go to the Third tab (Parameters of map projection and data display) - Map rendering styles - Choose "New basic Style").
 
-Cтиль зроблений за подобою id рeдактора з веб версії openstreetmap.org для JOSM.
-
+# Preview
 | Standart JOSM | New basic style    |
 | :-----------: |:------------------:| 
 | ![1](https://pasharm.github.io/New_basic_style_for_JOSM/preview/1.jpg)     | ![2](https://pasharm.github.io/New_basic_style_for_JOSM/preview/2.jpg)|
