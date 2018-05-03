@@ -2,7 +2,7 @@
 meta {
     title: "New basic style";
     description: "Style is made in the likeness of the id editor from the web version of openstreetmap.org. Use together with the standard one.Comments and suggestions write to https://github.com/pasharm/New_basic_style_for_JOSM/issues";
-    version: "15_2018-04-13";
+    version: "15_2018-05-03";
     author: "Mokrynskyi Pavlo";
     link: "https://github.com/pasharm/New_basic_style_for_JOSM";
     watch-modified: true;
@@ -1009,8 +1009,8 @@ relation[type=multipolygon][power=plant] >[role=~/inner|outer/] way|z17- {
     width: 2;
 }
 
-relation[type=multipolygon][landuse=industrial] >[role=~/inner|outer/] way|z17-,
-relation[type=multipolygon][power=plant] >[role=~/inner|outer/] way|z17- {
+relation[type=multipolygon][landuse=industrial] >[role=~/inner|outer/] way|z-16,
+relation[type=multipolygon][power=plant] >[role=~/inner|outer/] way|z-16 {
     color: #E4A4F5;
     width: 1;
 }
@@ -1039,7 +1039,7 @@ relation[type=multipolygon][landuse=military] >[role=~/inner|outer/] way|z17- {
     width: 2;
 }
 
-relation[type=multipolygon][landuse=military] >[role=~/inner|outer/] way|z17- {
+relation[type=multipolygon][landuse=military] >[role=~/inner|outer/] way|z-16 {
     color: #FF4444;
     width: 1;
 }
@@ -1216,7 +1216,7 @@ relation[type=multipolygon][landuse=forest] >[role=~/inner|outer/] way|z17- {
     width: 2;
 }
 
-relation[type=multipolygon][landuse=forest] >[role=~/inner|outer/] way|z17- {
+relation[type=multipolygon][landuse=forest] >[role=~/inner|outer/] way|z-16 {
     color: #5AB741;
     width: 1;
 }
@@ -1576,18 +1576,18 @@ area|z16[building][!building?!][wall?!],
 area|z16[building:part][!building:part?!] {
     z-index: 5;
     color: #E06E5F;
-    width: 0.5;
+    width: 1;
     fill-color: #E06E5F;
     fill-opacity: 0.2;
 }
 
-area|z10-15[building],
-area|z10-15[building=roof],
-area|z10-15[building][!building?!][wall?!],
-area|z10-15[building:part][!building:part?!] {
+area|z-15[building],
+area|z-15[building=roof],
+area|z-15[building][!building?!][wall?!],
+area|z-15[building:part][!building:part?!] {
     z-index: 5;
     color: #E06E5F;
-    width: 0.001;
+    width: 0.8;
     fill-color: #;
     fill-opacity: 0.01;
 }
