@@ -1587,9 +1587,9 @@ area|z-15[building][!building?!][wall?!],
 area|z-15[building:part][!building:part?!] {
     z-index: 5;
     color: #E06E5F;
-    width: 0.8;
-    fill-color: #;
-    fill-opacity: 0.01;
+    width: 1;
+    fill-color: #E06E5F;
+    fill-opacity: 0.2;
 }
 
 /*** Иконка внутри области ***/
