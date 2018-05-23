@@ -1880,7 +1880,7 @@ way[boundary=~/protected_area|national_park/]::dashes {
 
 
 
-area[/amenity|landuse|leisure|natural|building/] { 
+area[/amenity|landuse|leisure|natural|building|historic/] { 
     prop_area_small_name : 1; 
 }
 
