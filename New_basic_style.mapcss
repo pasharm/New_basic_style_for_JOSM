@@ -2,7 +2,7 @@
 meta {
     title: "New basic style";
     description: "Style is made in the likeness of the id editor from the web version of openstreetmap.org. Use together with the standard one.Comments and suggestions write to https://github.com/pasharm/New_basic_style_for_JOSM/issues";
-    version: "15_2018-05-18";
+    version: "15_2018-08-04";
     author: "Mokrynskyi Pavlo";
     link: "https://github.com/pasharm/New_basic_style_for_JOSM";
     watch-modified: true;
@@ -1031,7 +1031,7 @@ relation[type=multipolygon][landuse=~/commercial|retail|landfill/] >[role=~/inne
 
 area[landuse=military] {
     fill-color: #FF4444;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/military1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/military2.png";
 }
 
 relation[type=multipolygon][landuse=military] >[role=~/inner|outer/] way|z17- {
@@ -1060,7 +1060,7 @@ relation[type=multipolygon][military] >[role=~/inner|outer/] way|z-16 {
 
 area[landuse=vineyard] {
     fill-color: #AEDFA3;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/vineyard1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/vineyard2.png";
 }
 
 relation[type=multipolygon][landuse=vineyard] >[role=~/inner|outer/] way|z17- {
@@ -1075,7 +1075,7 @@ relation[type=multipolygon][landuse=vineyard] >[role=~/inner|outer/] way|z-16 {
 
 area[landuse=farmland] {
     fill-color: #bfe83f;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/farmland1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/farmland2.png";
 }
 
 relation[type=multipolygon][landuse=farmland] >[role=~/inner|outer/] way|z17- {
@@ -1090,7 +1090,7 @@ relation[type=multipolygon][landuse=farmland] >[role=~/inner|outer/] way|z-16 {
 
 area[landuse=cemetery] {
     fill-color: #BFE83F;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/cemetery1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/cemetery2.png";
 }
 
 relation[type=multipolygon][landuse=cemetery] >[role=~/inner|outer/] way|z17- {
@@ -1105,7 +1105,7 @@ relation[type=multipolygon][landuse=cemetery] >[role=~/inner|outer/] way|z-16 {
 
 area[amenity=grave_yard] {
     fill-color: #BFE83F;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/grave_yard1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/grave_yard2.png";
 }
 
 relation[type=multipolygon][amenity=grave_yard] >[role=~/inner|outer/] way|z17- {
@@ -1120,7 +1120,7 @@ relation[type=multipolygon][amenity=grave_yard] >[role=~/inner|outer/] way|z-16 
 
 area[landuse=meadow] {
     fill-color: #99ffaa;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/meadownew1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/meadownew2.png";
 }
 
 relation[type=multipolygon][landuse=meadow] >[role=~/inner|outer/] way|z17- {
@@ -1135,7 +1135,7 @@ relation[type=multipolygon][landuse=meadow] >[role=~/inner|outer/] way|z-16 {
 
 area[landuse=orchard] {
     fill-color: #BFE83F;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/orchard1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/orchard2.png";
 }
 
 relation[type=multipolygon][landuse=orchard] >[role=~/inner|outer/] way|z17- {
@@ -1150,7 +1150,7 @@ relation[type=multipolygon][landuse=orchard] >[role=~/inner|outer/] way|z-16 {
 
 area[landuse=allotments] {
     fill-color: #5ab741;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/allotments1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/allotments2.png";
 }
 
 relation[type=multipolygon][landuse=allotments] >[role=~/inner|outer/] way|z17- {
@@ -1193,7 +1193,7 @@ relation[type=multipolygon][landuse=farmyard] >[role=~/inner|outer/] way|z-16 {
 
 area[natural=wood] {
     fill-color: #5AB741;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/wood1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/wood2.png";
 }
 
 relation[type=multipolygon][natural=wood] >[role=~/inner|outer/] way|z17- {
@@ -1208,7 +1208,7 @@ relation[type=multipolygon][natural=wood] >[role=~/inner|outer/] way|z-16 {
 
 area[landuse=forest] {
     fill-color: #5AB741;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/wood1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/wood2.png";
 }
 
 relation[type=multipolygon][landuse=forest] >[role=~/inner|outer/] way|z17- {
@@ -1295,7 +1295,7 @@ relation[type=multipolygon][natural=water] >[role=~/inner|outer/] way|z-16 {
 
 area[landuse=quarry] {
     fill-color: #8C8C8C;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/quarry1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/quarry2.png";
 }
 
 relation[type=multipolygon][landuse=quarry] >[role=~/inner|outer/] way|z17- {
@@ -1400,7 +1400,7 @@ relation[type=multipolygon][leisure=~/pitch|park|nature_reserve/] >[role=~/inner
 
 area[landuse=scrub] {
     fill-color: #99ffaa;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/scrubnew1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/scrubnew2.png";
 }
 
 relation[type=multipolygon][landuse=scrub] >[role=~/inner|outer/] way|z17- {
@@ -1415,7 +1415,7 @@ relation[type=multipolygon][landuse=scrub] >[role=~/inner|outer/] way|z-16 {
 
 area[natural=scrub] {
     fill-color: #5AB741;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/scrubnew1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/scrubnew2.png";
 }
 
 relation[type=multipolygon][natural=scrub] >[role=~/inner|outer/] way|z17- {
@@ -1430,7 +1430,7 @@ relation[type=multipolygon][natural=scrub] >[role=~/inner|outer/] way|z-16 {
 
 area[natural=beach] {
     fill-color: #FFFF94;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/beach1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/beach2.png";
 }
 
 relation[type=multipolygon][natural=beach] >[role=~/inner|outer/] way|z17- {
@@ -1604,7 +1604,7 @@ area[amenity=parking] {
 
 area[leaf_type=mixed] {
     fill-color: #5AB741;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-mixed1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-mixed2.png";
 }
 
 relation[type=multipolygon][leaf_type=mixed] >[role=~/inner|outer/] way|z17- {
@@ -1619,7 +1619,7 @@ relation[type=multipolygon][leaf_type=mixed] >[role=~/inner|outer/] way|z-16 {
 
 area[leaf_type=broadleaved] {
     fill-color: #5AB741;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-broadleaved1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-broadleaved2.png";
 }
 
 relation[type=multipolygon][leaf_type=broadleaved] >[role=~/inner|outer/] way|z17- {
@@ -1634,7 +1634,7 @@ relation[type=multipolygon][leaf_type=broadleaved] >[role=~/inner|outer/] way|z-
 
 area[leaf_type=needleleaved] {
     fill-color: #5AB741;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-needleleaved1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-needleleaved2.png";
 }
 
 relation[type=multipolygon][leaf_type=needleleaved] >[role=~/inner|outer/] way|z17- {
@@ -1649,7 +1649,7 @@ relation[type=multipolygon][leaf_type=needleleaved] >[role=~/inner|outer/] way|z
 
 area[leaf_type=leafless] {
     fill-color: #5AB741;
-    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-leafless1.png";
+    fill-image: "https://pasharm.github.io/New_basic_style_for_JOSM/icon/leaf_type-leafless2.png";
 }
 
 relation[type=multipolygon][leaf_type=leafless] >[role=~/inner|outer/] way|z17- {
